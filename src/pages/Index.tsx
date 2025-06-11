@@ -69,7 +69,7 @@ const Index = () => {
     {
       icon: Target,
       title: "ประเมินตามกระบวนการธนาคารจริง",
-      description: "ใช้หลักเกณฑ์ DSR และการประเมิน���หมือนธนาคาร ธอส.",
+      description: "ใช้หลักเกณฑ์ DSR และการประเมินเหมือนธนาคาร ธอส.",
     },
     {
       icon: Users,
@@ -86,7 +86,7 @@ const Index = () => {
   const stats = [
     { number: "50,000+", label: "ผู้ใช้ที่เชื่อใจ" },
     { number: "95%", label: "ความแม่นยำในการประเมิน" },
-    { number: "4.8", label: "คะแนนรีวิว", icon: Star },
+    { number: "4.8", label: "คะแนน��ีวิว", icon: Star },
   ];
 
   const processSteps = [

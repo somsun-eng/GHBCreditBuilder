@@ -98,7 +98,7 @@ const Profile = () => {
       },
       riskAssessment: {
         level: "medium",
-        factors: ["รายได้ไม่คงที่", "���ระวัติเครดิตสั้น"],
+        factors: ["รายได้ไม่คงที่", "ประวัติเครดิตสั้น"],
         mitigatingFactors: ["ชำระบิลตรงเวลา", "มีการออมเงิน", "DSR ต่ำ"],
       },
       creditScoring: {
@@ -853,7 +853,7 @@ const Profile = () => {
 
             <div className="text-center">
               <p className="text-sm text-ghb-gray thai-text">
-                รองรับไฟล์ PDF, JPG, PNG ขนาดไม่เกิน 5MB
+                รองรับไฟล์ PDF, JPG, PNG ขน��ดไม่เกิน 5MB
               </p>
             </div>
           </div>
