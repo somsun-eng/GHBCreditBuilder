@@ -117,7 +117,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
       type: "regular_employee" as const,
       icon: Briefcase,
       title: "พนักงานประจำ",
-      description: "มีเง���นเดือนประจำ มีสลิปเงินเดือน",
+      description: "มีเงินเดือนประจำ มีสลิปเงินเดือน",
       features: [
         "ใช้เกณฑ์ DSR 1:3",
         "ประเมินจากเงินเดือนสุทธิ",
@@ -514,11 +514,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
           </div>
           {profile.customerType === "welfare_customer" && (
             <p className="text-sm text-ghb-gray thai-text mt-1">
-              ���ะใช้ 80% ของจำนวนนี้ในการคำนวณ (฿
-              {(
-                (profile.employmentDetails?.monthlyIncome || 0) * 0.8
-              ).toLocaleString()}
-              )
+              จะใช้ 80% ของจำนวนนี้ในการคำนวณ (฿
             </p>
           )}
         </div>
@@ -700,7 +696,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                     ).toLocaleString()}
                   </div>
                   <div className="text-sm text-ghb-gray thai-text">
-                    รายจ่ายรว���
+                    รายจ่ายรวม
                   </div>
                 </div>
               </div>

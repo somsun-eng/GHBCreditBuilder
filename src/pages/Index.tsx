@@ -69,7 +69,7 @@ const Index = () => {
     {
       icon: Target,
       title: "ประเมินตามกระบวนการธนาคารจริง",
-      description: "ใช้หลักเกณฑ์ DSR และการปร��เมินเหมือนธนาคาร ธอส.",
+      description: "ใช้หลักเกณฑ์ DSR และการประเมิน���หมือนธนาคาร ธอส.",
     },
     {
       icon: Users,
@@ -439,7 +439,7 @@ const Index = () => {
               disabled={otp.length !== 6}
               className="w-full h-12 !bg-[#fc4f00] text-white font-semibold rounded-xl thai-text"
             >
-              เริ่มจำลองการขอสิน��ชื่อ
+              เริ่มจำลองการขอสินเชื่อ
             </Button>
 
             <div className="text-center">

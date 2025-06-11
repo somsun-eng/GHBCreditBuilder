@@ -98,7 +98,7 @@ const Profile = () => {
       },
       riskAssessment: {
         level: "medium",
-        factors: ["รายได้ไม่คงที่", "ประวัติเครดิตสั้น"],
+        factors: ["รายได้ไม่คงที่", "���ระวัติเครดิตสั้น"],
         mitigatingFactors: ["ชำระบิลตรงเวลา", "มีการออมเงิน", "DSR ต่ำ"],
       },
       creditScoring: {
@@ -143,7 +143,7 @@ const Profile = () => {
               onClick={() => navigate("/loan-simulator")}
               className="bg-gradient-primary text-white thai-text"
             >
-              เริ่���ประเมินสินเชื่อ
+              เริ่มประเมินสินเชื่อ
             </Button>
           </div>
         </div>
@@ -816,7 +816,7 @@ const Profile = () => {
                 </span>
               </div>
               <Badge className="bg-yellow-100 text-yellow-700">
-                รอการต���วจสอบ
+                รอการตรวจสอบ
               </Badge>
             </div>
 
