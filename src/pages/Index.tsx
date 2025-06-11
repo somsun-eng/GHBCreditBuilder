@@ -24,11 +24,23 @@ import {
   Star,
   Users,
   ArrowRight,
+  Calculator,
+  FileText,
+  Clock,
+  User,
+  Briefcase,
+  Building,
+  Target,
+  BarChart3,
+  Lightbulb,
 } from "lucide-react";
+import LoanWizard from "@/components/LoanWizard";
 
 const Index = () => {
   const navigate = useNavigate();
-  const [step, setStep] = useState<"welcome" | "register" | "otp">("welcome");
+  const [step, setStep] = useState<
+    "welcome" | "register" | "otp" | "loan_wizard"
+  >("welcome");
   const [nationalId, setNationalId] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [otp, setOtp] = useState("");
@@ -45,33 +57,68 @@ const Index = () => {
 
   const handleOtpVerify = () => {
     if (otp.length === 6) {
-      navigate("/dashboard");
+      setStep("loan_wizard");
     }
+  };
+
+  const handleLoanWizardComplete = () => {
+    navigate("/dashboard");
   };
 
   const features = [
     {
-      icon: Shield,
-      title: "ปลอดภัยและเชื่อถือได้",
-      description: "ข้อมูลของคุณได้รับการปกป้องด้วยมาตรฐานสากล",
+      icon: Target,
+      title: "ประเมินตามกระบวนการธนาคารจริง",
+      description: "ใช้หลักเกณฑ์ DSR และการปร��เมินเหมือนธนาคาร ธอส.",
     },
     {
-      icon: TrendingUp,
-      title: "สร้างเครดิตได้จริง",
-      description: "ระบบวิเคราะห์ที่ช่วยพัฒนาคะแนนเครดิตของคุณ",
+      icon: Users,
+      title: "รองรับลูกค้า 3 ประเภท",
+      description: "พนักงานประจำ, ฟรีแลนซ์, และลูกค้าสวัสดิการ",
     },
     {
-      icon: Award,
-      title: "รางวัลและความสำเร็จ",
-      description: "ทำภารกิจและรับรางวัลเพื่อสร้างแรงจูงใจ",
+      icon: BarChart3,
+      title: "ข้อมูลทางเลือกเพิ่มคะแนน",
+      description: "ใช้ประวัติการชำระบิล การออม เพิ่มโอกาสอนุมัติ",
     },
   ];
 
   const stats = [
     { number: "50,000+", label: "ผู้ใช้ที่เชื่อใจ" },
-    { number: "95%", label: "อัตราความสำเร็จ" },
+    { number: "95%", label: "ความแม่นยำในการประเมิน" },
     { number: "4.8", label: "คะแนนรีวิว", icon: Star },
   ];
+
+  const processSteps = [
+    {
+      icon: User,
+      title: "เลือกประเภทลูกค้า",
+      description: "พนักงานประจำ / ฟรีแลนซ์ / สวัสดิการ",
+      color: "bg-blue-500",
+    },
+    {
+      icon: FileText,
+      title: "กรอกข้อมูลการเงิน",
+      description: "รายได้ รายจ่าย ภาระหนี้",
+      color: "bg-green-500",
+    },
+    {
+      icon: Calculator,
+      title: "ประเมินตาม DSR",
+      description: "คำนวณอัตราส่วนหนี้ต่อรายได้",
+      color: "bg-purple-500",
+    },
+    {
+      icon: CheckCircle,
+      title: "ผลการประเมิน",
+      description: "โอกาสอนุมัติ + คำแนะนำ",
+      color: "bg-orange-500",
+    },
+  ];
+
+  if (step === "loan_wizard") {
+    return <LoanWizard onComplete={handleLoanWizardComplete} />;
+  }
 
   if (step === "welcome") {
     return (
@@ -95,13 +142,13 @@ const Index = () => {
             </h1>
 
             <p className="text-lg text-[rgb(85,85,85)] mb-2 thai-text">
-              สร้างเครดิตที่ดีไปกับเรา
+              จำลองการขอสินเชื่อแบบจริง
             </p>
 
             <p className="text-sm text-[rgb(119,119,119)] mb-8 thai-text leading-relaxed">
-              แอปสำหรับฟรีแลนซ์และผู้ที่ต้องการสร้างประวัติเครดิตที่ดี
+              ประเมินโอกาสการอนุมัติตามกระบวนการของธนาคาร ธอส.
               <br />
-              แม้ไม่มีประวัติกับธนาคาร
+              รองรับทั้งพนักงานประจำ ฟรีแลนซ์ และลูกค้าสวัสดิการ
             </p>
 
             {/* Stats */}
@@ -121,6 +168,40 @@ const Index = () => {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Process Steps */}
+        <div className="px-4 mb-8">
+          <div className="max-w-md mx-auto">
+            <h2 className="text-lg font-bold text-ghb-dark thai-text text-center mb-4">
+              กระบวนการประเมิน
+            </h2>
+            <div className="grid grid-cols-2 gap-3">
+              {processSteps.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <Card
+                    key={index}
+                    className="border-0 shadow-sm bg-white/80 backdrop-blur"
+                  >
+                    <CardContent className="p-4 text-center">
+                      <div
+                        className={`w-10 h-10 ${step.color} rounded-xl flex items-center justify-center mx-auto mb-3`}
+                      >
+                        <Icon className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="font-semibold text-ghb-dark thai-text text-sm mb-1">
+                        {step.title}
+                      </h3>
+                      <p className="text-xs text-ghb-gray thai-text leading-relaxed">
+                        {step.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -151,6 +232,44 @@ const Index = () => {
           </div>
         </div>
 
+        {/* Customer Types Preview */}
+        <div className="px-4 mb-8">
+          <div className="max-w-md mx-auto">
+            <Card className="border-l-4 border-l-ghb-primary bg-gradient-to-r from-ghb-primary/5 to-white">
+              <CardContent className="p-4">
+                <div className="flex items-start space-x-3">
+                  <Lightbulb className="w-5 h-5 text-ghb-primary mt-0.5" />
+                  <div>
+                    <h3 className="font-semibold text-ghb-dark thai-text">
+                      รองรับลูกค้า 3 ประเภท
+                    </h3>
+                    <div className="mt-2 space-y-1">
+                      <div className="flex items-center">
+                        <Briefcase className="w-3 h-3 text-blue-500 mr-2" />
+                        <span className="text-sm text-ghb-gray thai-text">
+                          พนักงานประจำ (DSR 1:3)
+                        </span>
+                      </div>
+                      <div className="flex items-center">
+                        <User className="w-3 h-3 text-purple-500 mr-2" />
+                        <span className="text-sm text-ghb-gray thai-text">
+                          ฟรีแลนซ์ (รายได้ย้อนหลัง)
+                        </span>
+                      </div>
+                      <div className="flex items-center">
+                        <Building className="w-3 h-3 text-green-500 mr-2" />
+                        <span className="text-sm text-ghb-gray thai-text">
+                          สวัสดิการ (80% ของเงินเดือน)
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* CTA */}
         <div className="px-4 pb-8">
           <div className="max-w-md mx-auto">
@@ -158,12 +277,12 @@ const Index = () => {
               onClick={handleGetStarted}
               className="w-full h-14 !bg-[#fc4f00] text-white font-semibold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 thai-text"
             >
-              เริ่มต้นใช้งาน
+              เริ่มจำลองการขอสินเชื่อ
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
 
             <p className="text-center text-xs text-ghb-gray mt-4 thai-text">
-              การสมัครใช้งานฟรี • ไม่มีค่าธรรมเนียมแอบแฝง
+              ประเมินฟรี • ไม่บันทึกข้อมูลส่วนตัว • ผลลัพธ์ทันที
             </p>
           </div>
         </div>
@@ -175,17 +294,19 @@ const Index = () => {
               <div className="flex items-center">
                 <Shield className="w-4 h-4 text-ghb-success mr-2" />
                 <span className="text-xs text-ghb-gray thai-text">
-                  ปลอดภัย 100%
+                  ตามมาตรฐานธนาคาร
                 </span>
               </div>
               <div className="flex items-center">
-                <Users className="w-4 h-4 text-ghb-accent mr-2" />
-                <span className="text-xs text-ghb-gray thai-text">ใช้ง่าย</span>
+                <Calculator className="w-4 h-4 text-ghb-accent mr-2" />
+                <span className="text-xs text-ghb-gray thai-text">
+                  คำนวณแม่นยำ
+                </span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="w-4 h-4 text-ghb-success mr-2" />
+                <Clock className="w-4 h-4 text-ghb-success mr-2" />
                 <span className="text-xs text-ghb-gray thai-text">
-                  ผลลัพธ์จริง
+                  ผลลัพธ์ทันที
                 </span>
               </div>
             </div>
@@ -204,10 +325,10 @@ const Index = () => {
               <Smartphone className="w-8 h-8 text-white" />
             </div>
             <CardTitle className="text-xl font-bold text-ghb-dark thai-text">
-              สมัครสมาชิก
+              เริ่มต้นการประเมิน
             </CardTitle>
             <CardDescription className="thai-text">
-              กรอกข้อมูลเพื่อเริ่มต้นสร้างเครดิต
+              กรอกข้อมูลเพื่อเริ่มจำลองการขอสินเชื่อ
             </CardDescription>
           </CardHeader>
 
@@ -227,7 +348,7 @@ const Index = () => {
                 maxLength={13}
               />
               <p className="text-xs text-ghb-gray thai-text">
-                ใช้สำหรับยืนยันตัวตนอย่างปลอดภัย
+                ใช้เพื่อจำลองการตรวจสอบเครดิต (ไม่บันทึกข้อมูลจริง)
               </p>
             </div>
 
@@ -246,7 +367,7 @@ const Index = () => {
                 maxLength={10}
               />
               <p className="text-xs text-ghb-gray thai-text">
-                จะส่งรหัส OTP เพื่อยืนยัน
+                สำหรับติดต่อและการยืนยัน
               </p>
             </div>
 
@@ -318,7 +439,7 @@ const Index = () => {
               disabled={otp.length !== 6}
               className="w-full h-12 !bg-[#fc4f00] text-white font-semibold rounded-xl thai-text"
             >
-              ยืนยันและเข้าใช้งาน
+              เริ่มจำลองการขอสิน��ชื่อ
             </Button>
 
             <div className="text-center">
@@ -329,9 +450,9 @@ const Index = () => {
 
             <div className="text-center pt-4 border-t">
               <p className="text-xs text-ghb-gray thai-text">
-                หากไม่ได้รับรหัส กรุณาตรวจสอบหมายเลขโทรศัพท์
+                ระบบจำลองเท่านั้น ไม่ได้เชื่อมต่อกับธนาคารจริง
                 <br />
-                หรือติดต่อทีมสนับสนุน
+                ข้อมูลจะไม่ถูกบันทึกหรือนำไปใช้จริง
               </p>
             </div>
           </CardContent>
