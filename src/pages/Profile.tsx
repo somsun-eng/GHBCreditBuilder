@@ -33,6 +33,7 @@ import {
   ArrowRight,
   Settings,
   LogOut,
+  Shield,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CustomerProfile, LoanEvaluation } from "@/lib/bankingTypes";
@@ -347,7 +348,7 @@ const Profile = () => {
                 className="flex-1 thai-text"
                 onClick={() => navigate("/loan-simulator")}
               >
-                ประ��มินใหม่
+                ประเมินใหม่
               </Button>
               <Button
                 className="flex-1 bg-gradient-primary text-white thai-text"
@@ -516,7 +517,7 @@ const Profile = () => {
                   )}
                 >
                   {customerData.financialInfo.currentDSR <= 0.4
-                    ? "DSR อยู่ในเกณฑ์ดี เหมาะสำหรับการขอสินเชื่อ"
+                    ? "DSR อยู่ในเกณฑ์ดี เหมาะสำหรับการขอสินเ���ื่อ"
                     : "DSR สูงเกินเกณฑ์ ควรลดภาระหนี้ก่อนขอสินเชื่อ"}
                 </span>
               </div>
@@ -654,7 +655,7 @@ const Profile = () => {
                 {customerData.creditInfo.paymentHistory === "good" && "ดี"}
                 {customerData.creditInfo.paymentHistory === "fair" && "ปานกลาง"}
                 {customerData.creditInfo.paymentHistory === "poor" &&
-                  "ต้องปรับปรุง"}
+                  "ต้องป���ับปรุง"}
               </Badge>
             </div>
           </div>
@@ -764,7 +765,7 @@ const Profile = () => {
               <CreditCard className="w-5 h-5 text-purple-500 mt-0.5" />
               <div>
                 <h4 className="font-semibold text-purple-900 thai-text">
-                  ใช��บัตรเครดิตอย่างระมัดระวัง
+                  ใช้บัตรเครดิตอย่างระมัดระวัง
                 </h4>
                 <p className="text-sm text-purple-700 thai-text">
                   ใช้ไม่เกิน 30% ของวงเงิน และชำระเต็มจำนวนทุกเดือน
@@ -884,7 +885,7 @@ const Profile = () => {
                   เอกสารต้องยังไม่หมดอายุ
                 </h4>
                 <p className="text-sm text-ghb-gray thai-text">
-                  ตรวจสอบวันหมดอายุของบัตรประชาชนและเอกสารอื่นๆ
+                  ตรวจสอบวันหมดอายุ���องบัตรประชาชนและเอกสารอื่นๆ
                 </p>
               </div>
             </div>
