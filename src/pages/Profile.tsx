@@ -60,7 +60,7 @@ const Profile = () => {
       nationalId: "1234567890123",
       phoneNumber: "0812345678",
       firstName: "สมชาย",
-      lastName: "���จดี",
+      lastName: "ใจดี",
       employmentDetails: {
         type: "freelance",
         monthlyIncome: 35000,
@@ -98,8 +98,8 @@ const Profile = () => {
       },
       riskAssessment: {
         level: "medium",
-        factors: ["รายได้ไม่คงที่", "ปร��วัติเครดิตสั้น"],
-        mitigatingFactors: ["ชำระบิลตรงเวลา", "มีการออมเงิน", "DSR ต่ำ"],
+        factors: ["รายได้ไม่คงที่", "ประวัติเครดิตสั้น"],
+        mitigatingFactors: ["��ำระบิลตรงเวลา", "มีการออมเงิน", "DSR ต่ำ"],
       },
       creditScoring: {
         traditionalScore: 650,
@@ -134,7 +134,7 @@ const Profile = () => {
               <User className="w-8 h-8 text-ghb-primary" />
             </div>
             <h2 className="text-xl font-bold text-ghb-dark thai-text mb-2">
-              ยังไม่มีข้อมูลโปรไฟล์
+              ยังไม่��ีข้อมูลโปรไฟล์
             </h2>
             <p className="text-ghb-gray thai-text mb-6">
               กรุณาทำการประเมินสินเชื่อก่อนเพื่อสร้างโปรไฟล์
@@ -206,7 +206,7 @@ const Profile = () => {
     },
     {
       key: "savingsHistory" as keyof CustomerProfile["alternativeData"],
-      label: "ประวัติการออม��งิน",
+      label: "ประวัติการออมเงิน",
       icon: PiggyBank,
       points: 20,
     },
@@ -321,7 +321,7 @@ const Profile = () => {
                 <div className="flex items-center mb-2">
                   <DollarSign className="w-4 h-4 text-blue-500 mr-2" />
                   <span className="text-sm text-ghb-gray thai-text">
-                    จำนวนที่แนะนำ
+                    จำนวนที่แน���นำ
                   </span>
                 </div>
                 <div className="text-lg font-bold text-ghb-dark">
@@ -517,7 +517,7 @@ const Profile = () => {
                   )}
                 >
                   {customerData.financialInfo.currentDSR <= 0.4
-                    ? "DSR อยู่ในเกณฑ์ดี เหม��ะสำหรับการขอสินเชื่อ"
+                    ? "DSR อยู่ในเกณฑ์ดี เหมาะสำหรับการขอสินเชื่อ"
                     : "DSR สูงเกินเกณฑ์ ควรลดภาระหนี้ก่อนขอสินเชื่อ"}
                 </span>
               </div>
@@ -647,7 +647,7 @@ const Profile = () => {
 
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <span className="text-sm text-ghb-gray thai-text">
-                คุ��ภาพการชำระ
+                คุณภาพการชำระ
               </span>
               <Badge variant="outline" className="text-xs">
                 {customerData.creditInfo.paymentHistory === "excellent"
@@ -771,7 +771,7 @@ const Profile = () => {
                   ใช้บัตรเครดิตอย่างระมัดระวัง
                 </h4>
                 <p className="text-sm text-purple-700 thai-text">
-                  ใช้ไม่เกิน 30% ของวงเงิน และชำระเต็มจำนวนทุกเดือน
+                  ใช้ไม่เกิน 30% ของวงเงิน และชำระเต็มจำนวนทุกเดื��น
                 </p>
               </div>
             </div>
@@ -888,7 +888,7 @@ const Profile = () => {
                   เอกสารต้องยังไม่หมดอายุ
                 </h4>
                 <p className="text-sm text-ghb-gray thai-text">
-                  ตรวจสอบวันหมดอายุของบัตร���ระชาชนและเอกสารอื่นๆ
+                  ตรวจสอบวันหมดอายุของบัตรประชาชนและเอกสารอื่นๆ
                 </p>
               </div>
             </div>

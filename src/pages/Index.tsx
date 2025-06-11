@@ -348,7 +348,7 @@ const Index = () => {
                 maxLength={13}
               />
               <p className="text-xs text-ghb-gray thai-text">
-                ใช้เพื่อจำลองการตรวจสอบเครดิต (ไม่บันทึกข้อมูลจริง)
+                ใช้เพื่อจำลองการตรวจสอบเค���ดิต (ไม่บันทึกข้อมูลจริง)
               </p>
             </div>
 
@@ -376,7 +376,7 @@ const Index = () => {
               disabled={nationalId.length !== 13 || phoneNumber.length !== 10}
               className="w-full h-12 !bg-[#fc4f00] text-white font-semibold rounded-xl thai-text"
             >
-              ขอ��หัส OTP
+              ขอรหัส OTP
             </Button>
 
             <div className="flex items-center justify-center space-x-4 pt-4 border-t">
