@@ -86,7 +86,7 @@ const Index = () => {
   const stats = [
     { number: "50,000+", label: "ผู้ใช้ที่เชื่อใจ" },
     { number: "95%", label: "ความแม่นยำในการประเมิน" },
-    { number: "4.8", label: "คะแนน��ีวิว", icon: Star },
+    { number: "4.8", label: "คะแนนรีวิว", icon: Star },
   ];
 
   const processSteps = [
@@ -376,7 +376,7 @@ const Index = () => {
               disabled={nationalId.length !== 13 || phoneNumber.length !== 10}
               className="w-full h-12 !bg-[#fc4f00] text-white font-semibold rounded-xl thai-text"
             >
-              ขอรหัส OTP
+              ขอ��หัส OTP
             </Button>
 
             <div className="flex items-center justify-center space-x-4 pt-4 border-t">

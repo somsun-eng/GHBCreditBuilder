@@ -60,7 +60,7 @@ const Profile = () => {
       nationalId: "1234567890123",
       phoneNumber: "0812345678",
       firstName: "สมชาย",
-      lastName: "ใจดี",
+      lastName: "���จดี",
       employmentDetails: {
         type: "freelance",
         monthlyIncome: 35000,
@@ -98,7 +98,7 @@ const Profile = () => {
       },
       riskAssessment: {
         level: "medium",
-        factors: ["รายได้ไม่คงที่", "ประวัติเครดิตสั้น"],
+        factors: ["รายได้ไม่คงที่", "ปร��วัติเครดิตสั้น"],
         mitigatingFactors: ["ชำระบิลตรงเวลา", "มีการออมเงิน", "DSR ต่ำ"],
       },
       creditScoring: {
@@ -206,7 +206,7 @@ const Profile = () => {
     },
     {
       key: "savingsHistory" as keyof CustomerProfile["alternativeData"],
-      label: "ประวัติการออมเงิน",
+      label: "ประวัติการออม��งิน",
       icon: PiggyBank,
       points: 20,
     },
@@ -517,7 +517,7 @@ const Profile = () => {
                   )}
                 >
                   {customerData.financialInfo.currentDSR <= 0.4
-                    ? "DSR อยู่ในเกณฑ์ดี เหมาะสำหรับการขอสินเชื่อ"
+                    ? "DSR อยู่ในเกณฑ์ดี เหม��ะสำหรับการขอสินเชื่อ"
                     : "DSR สูงเกินเกณฑ์ ควรลดภาระหนี้ก่อนขอสินเชื่อ"}
                 </span>
               </div>
@@ -647,7 +647,7 @@ const Profile = () => {
 
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <span className="text-sm text-ghb-gray thai-text">
-                คุณภาพการชำระ
+                คุ��ภาพการชำระ
               </span>
               <Badge variant="outline" className="text-xs">
                 {customerData.creditInfo.paymentHistory === "excellent"
@@ -853,7 +853,7 @@ const Profile = () => {
 
             <div className="text-center">
               <p className="text-sm text-ghb-gray thai-text">
-                รองรับไฟล์ PDF, JPG, PNG ขน��ดไม่เกิน 5MB
+                รองรับไฟล์ PDF, JPG, PNG ขนาดไม่เกิน 5MB
               </p>
             </div>
           </div>
@@ -888,7 +888,7 @@ const Profile = () => {
                   เอกสารต้องยังไม่หมดอายุ
                 </h4>
                 <p className="text-sm text-ghb-gray thai-text">
-                  ตรวจสอบวันหมดอายุของบัตรประชาชนและเอกสารอื่นๆ
+                  ตรวจสอบวันหมดอายุของบัตร���ระชาชนและเอกสารอื่นๆ
                 </p>
               </div>
             </div>
