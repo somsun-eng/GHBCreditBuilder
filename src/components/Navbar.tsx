@@ -46,7 +46,7 @@ const navItems = [
 
 const mainNavItems = [
   { label: "ประเมินสินเชื่อ", path: "/loan-simulator" },
-  { label: "คู่มือฟรีแลนซ์", path: "/freelancer-guide" },
+  { label: "ศูนย์การเรียนรู้", path: "/education" },
   { label: "ภารกิจ", path: "/missions" },
   { label: "เครดิตทดลอง", path: "/credit-sandbox" },
 ];

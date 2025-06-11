@@ -222,7 +222,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     {
       key: "utilityPayments" as keyof CustomerProfile["alternativeData"],
       label: "ชำระค่าน้ำ-ไฟตรงเวลา",
-      description: "แสดงความรับผิดชอบในการชำระ",
+      description: "แสดงความร���บผิดชอบในการชำระ",
       icon: Zap,
       points: 15,
     },
@@ -242,7 +242,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     },
     {
       key: "eCommerceActivity" as keyof CustomerProfile["alternativeData"],
-      label: "ใช้บริการธนาคารออนไ��น์",
+      label: "ใช้บริการธนาคารออนไลน์",
       description: "Mobile Banking, E-Payment",
       icon: CreditCard,
       points: 8,
@@ -411,7 +411,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
         <h2 className="text-xl font-bold text-ghb-dark thai-text mb-2">
           ข้อมูลส่วนตัว
         </h2>
-        <p className="text-ghb-gray thai-text">ข้อมูลพื้นฐานสำหรับการติดต่อ</p>
+        <p className="text-ghb-gray thai-text">ข้อมูลพื้นฐานสำหรั��การติดต่อ</p>
       </div>
 
       <div className="space-y-4">
@@ -599,7 +599,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             <FileText className="w-5 h-5 text-orange-500 mt-0.5" />
             <div>
               <h3 className="font-semibold text-orange-900 thai-text">
-                💡 เคล็ดลับสำหรับฟรีแลน���์
+                💡 เคล็ดลับสำหรับฟรีแลนซ์
               </h3>
               <div className="mt-2 space-y-1">
                 <p className="text-sm text-orange-700 thai-text">
@@ -659,7 +659,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             />
           </div>
           <p className="text-sm text-ghb-gray thai-text mt-1">
-            ค่าครองชีพ ค่าเช่า ค่าอาหาร ค่าใช้จ่ายปร��จำ
+            ค่าครองชีพ ค่าเช่า ค่าอาหาร ค่าใช้จ่ายประจำ
           </p>
         </div>
 
@@ -1322,11 +1322,10 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             {currentStepIndex > 0 && (
               <Button
                 variant="outline"
-                onClick={handlePrevious}
-                className="h-12 px-6 thai-text"
+                onClick={() => (window.location.href = "/education")}
+                className="flex-1 h-12 thai-text"
               >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                ย้อนกลับ
+                เรียนรู้เพิ่มเติม
               </Button>
             )}
 
