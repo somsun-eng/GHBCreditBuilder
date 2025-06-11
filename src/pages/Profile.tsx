@@ -200,7 +200,7 @@ const Profile = () => {
     },
     {
       key: "phonePayments" as keyof CustomerProfile["alternativeData"],
-      label: "การชำระค่าโทรศ���พท์",
+      label: "การชำระค่าโทรศัพท์",
       icon: Smartphone,
       points: 12,
     },
@@ -626,7 +626,7 @@ const Profile = () => {
 
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <span className="text-sm text-ghb-gray thai-text">
-                ประวัติ��ินเชื่อ
+                ประวัติสินเชื่อ
               </span>
               <div className="flex items-center">
                 {customerData.creditInfo.hasLoanHistory ? (
@@ -735,7 +735,7 @@ const Profile = () => {
       <Card>
         <CardHeader>
           <CardTitle className="text-ghb-dark thai-text">
-            วิธีปรับปรุงคะแ���นเครดิต
+            วิธีปรับปรุงคะแนนเครดิต
           </CardTitle>
         </CardHeader>
         <CardContent>
