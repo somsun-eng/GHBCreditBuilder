@@ -99,7 +99,7 @@ const Profile = () => {
       riskAssessment: {
         level: "medium",
         factors: ["รายได้ไม่คงที่", "ประวัติเครดิตสั้น"],
-        mitigatingFactors: ["��ำระบิลตรงเวลา", "มีการออมเงิน", "DSR ต่ำ"],
+        mitigatingFactors: ["ชำระบิลตรงเวลา", "มีการออมเงิน", "DSR ต่ำ"],
       },
       creditScoring: {
         traditionalScore: 650,
@@ -134,7 +134,7 @@ const Profile = () => {
               <User className="w-8 h-8 text-ghb-primary" />
             </div>
             <h2 className="text-xl font-bold text-ghb-dark thai-text mb-2">
-              ยังไม่��ีข้อมูลโปรไฟล์
+              ยังไม่มีข้อมูลโปรไฟล์
             </h2>
             <p className="text-ghb-gray thai-text mb-6">
               กรุณาทำการประเมินสินเชื่อก่อนเพื่อสร้างโปรไฟล์
@@ -200,7 +200,7 @@ const Profile = () => {
     },
     {
       key: "phonePayments" as keyof CustomerProfile["alternativeData"],
-      label: "การชำระค่าโทรศัพท์",
+      label: "การชำระค่าโทรศ���พท์",
       icon: Smartphone,
       points: 12,
     },
@@ -321,7 +321,7 @@ const Profile = () => {
                 <div className="flex items-center mb-2">
                   <DollarSign className="w-4 h-4 text-blue-500 mr-2" />
                   <span className="text-sm text-ghb-gray thai-text">
-                    จำนวนที่แน���นำ
+                    จำนวนที่แนะนำ
                   </span>
                 </div>
                 <div className="text-lg font-bold text-ghb-dark">
@@ -626,7 +626,7 @@ const Profile = () => {
 
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <span className="text-sm text-ghb-gray thai-text">
-                ประวัติสินเชื่อ
+                ประวัติ��ินเชื่อ
               </span>
               <div className="flex items-center">
                 {customerData.creditInfo.hasLoanHistory ? (
@@ -735,7 +735,7 @@ const Profile = () => {
       <Card>
         <CardHeader>
           <CardTitle className="text-ghb-dark thai-text">
-            วิธีปรับปรุงคะแนนเครดิต
+            วิธีปรับปรุงคะแ���นเครดิต
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -771,7 +771,7 @@ const Profile = () => {
                   ใช้บัตรเครดิตอย่างระมัดระวัง
                 </h4>
                 <p className="text-sm text-purple-700 thai-text">
-                  ใช้ไม่เกิน 30% ของวงเงิน และชำระเต็มจำนวนทุกเดื��น
+                  ใช้ไม่เกิน 30% ของวงเงิน และชำระเต็มจำนวนทุกเดือน
                 </p>
               </div>
             </div>
