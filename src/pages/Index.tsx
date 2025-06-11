@@ -33,6 +33,9 @@ import {
   Target,
   BarChart3,
   Lightbulb,
+  CreditCard,
+  DollarSign,
+  Wallet,
 } from "lucide-react";
 import LoanWizard from "@/components/LoanWizard";
 
@@ -68,51 +71,72 @@ const Index = () => {
   const features = [
     {
       icon: Target,
-      title: "ประเมินตามกระบวนการธนาคารจริง",
-      description: "ใช้หลักเกณฑ์ DSR และการประเมินเหมือนธนาคาร ธอส.",
-    },
-    {
-      icon: Users,
-      title: "รองรับลูกค้า 3 ประเภท",
-      description: "พนักงานประจำ, ฟรีแลนซ์, และลูกค้าสวัสดิการ",
+      title: "เชี่ยวชาญด้านฟรีแลนซ์",
+      description: "ระบบประเมินเฉพาะคนทำงานอิสระ ไม่ต้องมีสลิปเงินเดือน",
     },
     {
       icon: BarChart3,
-      title: "ข้อมูลทางเลือกเพิ่มคะแนน",
-      description: "ใช้ประวัติการชำระบิล การออม เพิ่มโอกาสอนุมัติ",
+      title: "ใช้ข้อมูลทางเลือก",
+      description: "ประเมินจากรายการเดินบัญชี ประวัติการชำระบิล การออมเงิน",
+    },
+    {
+      icon: Clock,
+      title: "ได้ผลลัพธ์ทันที",
+      description: "รู้โอกาสการอนุมัติและวงเงินที่คุณกู้ได้ภายใน 5 นา���ี",
     },
   ];
 
   const stats = [
-    { number: "50,000+", label: "ผู้ใช้ที่เชื่อใจ" },
-    { number: "95%", label: "ความแม่นยำในการประเมิน" },
-    { number: "4.8", label: "คะแนนรีวิว", icon: Star },
+    { number: "25,000+", label: "ฟรีแลนซ์ที่เชื่อใจ" },
+    { number: "78%", label: "อัตราการอนุมัติ" },
+    { number: "4.7", label: "คะแนนรีวิว", icon: Star },
   ];
 
   const processSteps = [
     {
       icon: User,
-      title: "เลือกประเภทลูกค้า",
-      description: "พนักงานประจำ / ฟรีแลนซ์ / สวัสดิการ",
+      title: "ข้อมูลรายได้",
+      description: "รายได้เฉลี่ยต่อเดือนจากงานฟรีแลนซ์",
       color: "bg-blue-500",
     },
     {
       icon: FileText,
-      title: "กรอกข้อมูลการเงิน",
-      description: "รายได้ รายจ่าย ภาระหนี้",
+      title: "หลักฐานรายได้",
+      description: "Statement บัญชี / ภ.พ.30 / สัญญาจ้าง",
       color: "bg-green-500",
     },
     {
       icon: Calculator,
-      title: "ประเมินตาม DSR",
-      description: "คำนวณอัตราส่วนหนี้ต่อรายได้",
+      title: "ประเมินความสามารถ",
+      description: "วิเคราะห์รายได้ย้อนหลัง 6-12 เดือน",
       color: "bg-purple-500",
     },
     {
       icon: CheckCircle,
       title: "ผลการประเมิน",
-      description: "โอกาสอนุมัติ + คำแนะนำ",
+      description: "วงเงินและโอกาสอนุมัติ",
       color: "bg-orange-500",
+    },
+  ];
+
+  const freelancerTips = [
+    {
+      icon: Wallet,
+      title: "ไม่มีสลิปเงินเดือน?",
+      description: "ใช้ Statement บัญชี 6 เดือนแทนได้",
+      color: "text-blue-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "รายได้ไม่สม่ำเสมอ?",
+      description: "เราดูค่าเฉลี่ยและแนวโน้มการเติบโต",
+      color: "text-green-600",
+    },
+    {
+      icon: CreditCard,
+      title: "ไม่มีประวัติเครดิต?",
+      description: "ใช้ข้อมูลการชำระบิลและการออมเงิน",
+      color: "text-purple-600",
     },
   ];
 
@@ -142,13 +166,13 @@ const Index = () => {
             </h1>
 
             <p className="text-lg text-[rgb(85,85,85)] mb-2 thai-text">
-              จำลองการขอสินเชื่อแบบจริง
+              สินเชื่อสำหรับฟรีแลนซ์
             </p>
 
             <p className="text-sm text-[rgb(119,119,119)] mb-8 thai-text leading-relaxed">
-              ประเมินโอกาสการอนุมัติตามกระบวนการของธนาคาร ธอส.
+              ประเมินโอกาสการขอสินเชื่อ ธอส. สำหรับคนทำงานอิสระ
               <br />
-              รองรับทั้งพนักงานประจำ ฟรีแลนซ์ และลูกค้าสวัสดิการ
+              ไม่ต้องมีสลิปเงินเดือน ใช้หลักฐานรายได้ที่มีอยู่
             </p>
 
             {/* Stats */}
@@ -172,11 +196,40 @@ const Index = () => {
           </div>
         </div>
 
+        {/* Freelancer Tips */}
+        <div className="px-4 mb-8">
+          <div className="max-w-md mx-auto">
+            <h2 className="text-lg font-bold text-ghb-dark thai-text text-center mb-4">
+              ฟรีแลนซ์กู้ได้! แค่มีหลักฐานนี้
+            </h2>
+            <div className="space-y-3">
+              {freelancerTips.map((tip, index) => {
+                const Icon = tip.icon;
+                return (
+                  <Card key={index} className="border-0 shadow-sm bg-white/90">
+                    <CardContent className="flex items-center p-4">
+                      <Icon className={`w-8 h-8 ${tip.color} mr-3`} />
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-ghb-dark thai-text text-sm mb-1">
+                          {tip.title}
+                        </h3>
+                        <p className="text-xs text-ghb-gray thai-text leading-relaxed">
+                          {tip.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
         {/* Process Steps */}
         <div className="px-4 mb-8">
           <div className="max-w-md mx-auto">
             <h2 className="text-lg font-bold text-ghb-dark thai-text text-center mb-4">
-              กระบวนการประเมิน
+              ขั้นตอนประเมินสำหรับฟรีแลนซ์
             </h2>
             <div className="grid grid-cols-2 gap-3">
               {processSteps.map((step, index) => {
@@ -232,34 +285,34 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Customer Types Preview */}
+        {/* Document Requirements Preview */}
         <div className="px-4 mb-8">
           <div className="max-w-md mx-auto">
             <Card className="border-l-4 border-l-ghb-primary bg-gradient-to-r from-ghb-primary/5 to-white">
               <CardContent className="p-4">
                 <div className="flex items-start space-x-3">
-                  <Lightbulb className="w-5 h-5 text-ghb-primary mt-0.5" />
+                  <FileText className="w-5 h-5 text-ghb-primary mt-0.5" />
                   <div>
                     <h3 className="font-semibold text-ghb-dark thai-text">
-                      รองรับลูกค้า 3 ประเภท
+                      เอกสารที่ต้องเตรียม (ฟรีแลนซ์)
                     </h3>
                     <div className="mt-2 space-y-1">
                       <div className="flex items-center">
-                        <Briefcase className="w-3 h-3 text-blue-500 mr-2" />
+                        <CheckCircle className="w-3 h-3 text-green-500 mr-2" />
                         <span className="text-sm text-ghb-gray thai-text">
-                          พนักงานประจำ (DSR 1:3)
+                          Statement บัญชี 6-12 เดือน
                         </span>
                       </div>
                       <div className="flex items-center">
-                        <User className="w-3 h-3 text-purple-500 mr-2" />
+                        <CheckCircle className="w-3 h-3 text-green-500 mr-2" />
                         <span className="text-sm text-ghb-gray thai-text">
-                          ฟรีแลนซ์ (รายได้ย้อนหลัง)
+                          ภ.พ.30 หรือหลักฐานรายได้
                         </span>
                       </div>
                       <div className="flex items-center">
-                        <Building className="w-3 h-3 text-green-500 mr-2" />
+                        <CheckCircle className="w-3 h-3 text-green-500 mr-2" />
                         <span className="text-sm text-ghb-gray thai-text">
-                          สวัสดิการ (80% ของเงินเดือน)
+                          บัตรประชาชน + ทะเบียนบ้าน
                         </span>
                       </div>
                     </div>
@@ -277,12 +330,12 @@ const Index = () => {
               onClick={handleGetStarted}
               className="w-full h-14 !bg-[#fc4f00] text-white font-semibold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 thai-text"
             >
-              เริ่มจำลองการขอสินเชื่อ
+              เริ่มประเมินโอกาสกู้เงิน
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
 
             <p className="text-center text-xs text-ghb-gray mt-4 thai-text">
-              ประเมินฟรี • ไม่บันทึกข้อมูลส่วนตัว • ผลลัพธ์ทันที
+              ประเมินฟรี • ไม่เก็บข้อมูลส่วนตัว • ผลลัพธ์ใ�� 5 นาที
             </p>
           </div>
         </div>
@@ -294,19 +347,19 @@ const Index = () => {
               <div className="flex items-center">
                 <Shield className="w-4 h-4 text-ghb-success mr-2" />
                 <span className="text-xs text-ghb-gray thai-text">
-                  ตามมาตรฐานธนาคาร
+                  ปลอดภัย 100%
                 </span>
               </div>
               <div className="flex items-center">
-                <Calculator className="w-4 h-4 text-ghb-accent mr-2" />
+                <Users className="w-4 h-4 text-ghb-accent mr-2" />
                 <span className="text-xs text-ghb-gray thai-text">
-                  คำนวณแม่นยำ
+                  เชี่ยวชาญฟรีแลนซ์
                 </span>
               </div>
               <div className="flex items-center">
                 <Clock className="w-4 h-4 text-ghb-success mr-2" />
                 <span className="text-xs text-ghb-gray thai-text">
-                  ผลลัพธ์ทันที
+                  ผลลัพธ์เร็ว
                 </span>
               </div>
             </div>
@@ -325,10 +378,10 @@ const Index = () => {
               <Smartphone className="w-8 h-8 text-white" />
             </div>
             <CardTitle className="text-xl font-bold text-ghb-dark thai-text">
-              เริ่มต้นการประเมิน
+              เริ่มประเมินสำหรับฟรีแลนซ์
             </CardTitle>
             <CardDescription className="thai-text">
-              กรอกข้อมูลเพื่อเริ่มจำลองการขอสินเชื่อ
+              กรอกข้อมูลเพื่อเริ่มต้นการประเมิน
             </CardDescription>
           </CardHeader>
 
@@ -367,7 +420,7 @@ const Index = () => {
                 maxLength={10}
               />
               <p className="text-xs text-ghb-gray thai-text">
-                สำหรับติดต่อและการยืนยัน
+                สำหรับรับผลการประเมิน
               </p>
             </div>
 
@@ -439,7 +492,7 @@ const Index = () => {
               disabled={otp.length !== 6}
               className="w-full h-12 !bg-[#fc4f00] text-white font-semibold rounded-xl thai-text"
             >
-              เริ่มจำลองการขอสินเชื่อ
+              เริ่มประเมินโอกาสกู้เงิน
             </Button>
 
             <div className="text-center">
@@ -452,7 +505,7 @@ const Index = () => {
               <p className="text-xs text-ghb-gray thai-text">
                 ระบบจำลองเท่านั้น ไม่ได้เชื่อมต่อกับธนาคารจริง
                 <br />
-                ข้อมูลจะไม่ถูกบันทึกหรือนำไปใช้จริง
+                เหมาะสำหรับฟรีแลนซ์ที่ต้องการทราบโอกาสการกู้
               </p>
             </div>
           </CardContent>
