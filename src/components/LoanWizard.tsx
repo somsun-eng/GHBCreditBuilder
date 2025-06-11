@@ -102,7 +102,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
       label: "หลักฐานรายได้",
       description: "รายได้และเอกสาร",
     },
-    { key: "financial", label: "การเงิน", description: "รายจ่ายและ���าระหนี้" },
+    { key: "financial", label: "การเงิน", description: "รายจ่ายและภาระหนี้" },
     {
       key: "loan_details",
       label: "สินเชื่อ",
@@ -178,7 +178,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     {
       type: "work_contract",
       title: "สัญญาจ้างงาน/ใบเสนอราคา",
-      description: "จากลูกค้าหรือแพล���ฟอร์มงาน",
+      description: "จากลูกค้าหรือแพลตฟอร์มงาน",
       required: false,
       icon: Briefcase,
     },
@@ -242,7 +242,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     },
     {
       key: "eCommerceActivity" as keyof CustomerProfile["alternativeData"],
-      label: "ใช้บริการธนาคารออนไลน์",
+      label: "ใช้บริการธนาคารออนไ��น์",
       description: "Mobile Banking, E-Payment",
       icon: CreditCard,
       points: 8,
@@ -497,7 +497,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
         <h2 className="text-xl font-bold text-ghb-dark thai-text mb-2">
           รายได้และหลักฐาน
         </h2>
-        <p className="text-ghb-gray thai-text">รายได้เฉลี่ยและเอ��สารที่มี</p>
+        <p className="text-ghb-gray thai-text">รายได้เฉลี่ยและเอกสารที่มี</p>
       </div>
 
       <div className="space-y-4">
@@ -599,7 +599,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             <FileText className="w-5 h-5 text-orange-500 mt-0.5" />
             <div>
               <h3 className="font-semibold text-orange-900 thai-text">
-                💡 เคล็ดลับสำหรับฟรีแลนซ์
+                💡 เคล็ดลับสำหรับฟรีแลน���์
               </h3>
               <div className="mt-2 space-y-1">
                 <p className="text-sm text-orange-700 thai-text">
@@ -659,7 +659,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             />
           </div>
           <p className="text-sm text-ghb-gray thai-text mt-1">
-            ค่าครองชีพ ค่าเช่า ค่าอาหาร ค่าใช้จ่ายประจำ
+            ค่าครองชีพ ค่าเช่า ค่าอาหาร ค่าใช้จ่ายปร��จำ
           </p>
         </div>
 
@@ -947,7 +947,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                 ทำไมข้อมูลนี้สำคัญสำหรับฟรีแลนซ์?
               </h3>
               <p className="text-sm text-blue-700 thai-text mt-1 leading-relaxed">
-                เนื่องจากฟรีแลนซ์มักไม่มีประวั���ิเครดิตจากบัตรเครดิตหรือสินเชื่อ
+                เนื่องจากฟรีแลนซ์มักไม่มีประวัติเครดิตจากบัตรเครดิตหรือสินเชื่อ
                 ธนาคารจึงใช้ข้อมูลพฤติกรรมการเงินในชีวิตประจำวันเป็นตัวชี้วัดความน่าเชื่อถือแทน
               </p>
             </div>
@@ -1264,7 +1264,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
           </Button>
           <Button
             className="flex-1 h-12 bg-gradient-primary text-white thai-text"
-            onClick={() => navigate("/education")}
+            onClick={() => navigate("/freelancer-guide")}
           >
             {recommendation.type === "approval" ||
             recommendation.type === "conditional_approval"
