@@ -143,7 +143,7 @@ const Profile = () => {
               onClick={() => navigate("/loan-simulator")}
               className="bg-gradient-primary text-white thai-text"
             >
-              เริ่มประเมินสินเชื่อ
+              เริ่���ประเมินสินเชื่อ
             </Button>
           </div>
         </div>
@@ -517,7 +517,7 @@ const Profile = () => {
                   )}
                 >
                   {customerData.financialInfo.currentDSR <= 0.4
-                    ? "DSR อยู่ในเกณฑ์ดี เหมาะสำหรับการขอสินเ���ื่อ"
+                    ? "DSR อยู่ในเกณฑ์ดี เหมาะสำหรับการขอสินเชื่อ"
                     : "DSR สูงเกินเกณฑ์ ควรลดภาระหนี้ก่อนขอสินเชื่อ"}
                 </span>
               </div>
@@ -650,12 +650,15 @@ const Profile = () => {
                 คุณภาพการชำระ
               </span>
               <Badge variant="outline" className="text-xs">
-                {customerData.creditInfo.paymentHistory === "excellent" &&
-                  "ดีเยี่ยม"}
-                {customerData.creditInfo.paymentHistory === "good" && "ดี"}
-                {customerData.creditInfo.paymentHistory === "fair" && "ปานกลาง"}
-                {customerData.creditInfo.paymentHistory === "poor" &&
-                  "ต้องป���ับปรุง"}
+                {customerData.creditInfo.paymentHistory === "excellent"
+                  ? "ดีเยี่ยม"
+                  : customerData.creditInfo.paymentHistory === "good"
+                    ? "ดี"
+                    : customerData.creditInfo.paymentHistory === "fair"
+                      ? "ปานกลาง"
+                      : customerData.creditInfo.paymentHistory === "poor"
+                        ? "ต้องปรับปรุง"
+                        : "ไม่ทราบ"}
               </Badge>
             </div>
           </div>
@@ -813,7 +816,7 @@ const Profile = () => {
                 </span>
               </div>
               <Badge className="bg-yellow-100 text-yellow-700">
-                รอการตรวจสอบ
+                รอการต���วจสอบ
               </Badge>
             </div>
 
@@ -885,7 +888,7 @@ const Profile = () => {
                   เอกสารต้องยังไม่หมดอายุ
                 </h4>
                 <p className="text-sm text-ghb-gray thai-text">
-                  ตรวจสอบวันหมดอายุ���องบัตรประชาชนและเอกสารอื่นๆ
+                  ตรวจสอบวันหมดอายุของบัตรประชาชนและเอกสารอื่นๆ
                 </p>
               </div>
             </div>
