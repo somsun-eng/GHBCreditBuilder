@@ -11,6 +11,7 @@ import Education from "./pages/Education";
 import Chat from "./pages/Chat";
 import CreditSandbox from "./pages/CreditSandbox";
 import DocumentUpload from "./pages/DocumentUpload";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/chat" element={<Chat />} />
           <Route path="/credit-sandbox" element={<CreditSandbox />} />
           <Route path="/document-upload" element={<DocumentUpload />} />
+          <Route path="/profile" element={<Profile />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

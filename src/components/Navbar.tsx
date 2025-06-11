@@ -126,13 +126,15 @@ export const Navbar: React.FC<NavbarProps> = ({ notifications = 0 }) => {
               </Button>
 
               {/* User Profile */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-white hover:bg-white/10"
-              >
-                <User className="w-5 h-5" />
-              </Button>
+              <Link to="/profile">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-white hover:bg-white/10"
+                >
+                  <User className="w-5 h-5" />
+                </Button>
+              </Link>
 
               {/* Mobile Menu Button */}
               <Button

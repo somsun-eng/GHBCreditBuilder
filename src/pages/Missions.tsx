@@ -126,7 +126,7 @@ const Missions = () => {
     },
     {
       id: "8",
-      title: "เชิญเพื่อนร่วมสร้าง���ครดิต",
+      title: "เชิญเพื่อนร่วมสร้างเครดิต",
       description: "เชิญเพื่อน 3 คนมาใช้แอป",
       icon: Users,
       difficulty: "medium",
