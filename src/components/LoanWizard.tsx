@@ -58,7 +58,6 @@ interface LoanWizardProps {
 
 type WizardStep =
   | "freelance_type"
-  | "personal_info"
   | "income_proof"
   | "financial"
   | "loan_details"
@@ -92,11 +91,6 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
       key: "freelance_type",
       label: "ประเภทงาน",
       description: "ประเภทฟรีแลนซ์ของคุณ",
-    },
-    {
-      key: "personal_info",
-      label: "ข้อมูลส่วนตัว",
-      description: "ข้อมูลติดต่อ",
     },
     {
       key: "income_proof",
@@ -328,13 +322,6 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
           (profile.freelanceType !== "other" ||
             customJobTitle.trim().length > 0)
         );
-      case "personal_info":
-        return !!(
-          profile.nationalId &&
-          profile.phoneNumber &&
-          profile.firstName &&
-          profile.lastName
-        );
       case "income_proof":
         return !!(
           profile.employmentDetails?.monthlyIncome &&
@@ -440,7 +427,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                 ทำไมต้องระบุประเภทงาน?
               </h3>
               <p className="text-sm text-blue-700 thai-text mt-1 leading-relaxed">
-                ช่วยให้เราประเมินความเสี่ยงและเสถียรภาพของรายได้ได้แม่นยำขึ้น
+                ช่วยให้เราประเมินความเ��ี่ยงและเสถียรภาพของรายได้ได้แม่นยำขึ้น
                 แต่ละประเภทงานมีลักษณะการรับเงินที่แตกต่างกัน
               </p>
             </div>
@@ -1020,7 +1007,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
       <div className="space-y-4">
         {[
           {
-            step: "วิเคราะห์รายได้��้อนหลัง",
+            step: "วิเคราะห์รายได้ย้อนหลัง",
             time: "2 นาที",
             status: "completed",
           },
@@ -1133,7 +1120,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                 )}
               >
                 {recommendation.type === "approval"
-                  ? "มีโอกาสผ่า���อนุมัติ"
+                  ? "มีโอกาสผ่านอนุมัติ"
                   : recommendation.type === "conditional_approval"
                     ? "��นุมัติแบบมีเงื่อนไข"
                     : "ควรปรับปรุงข้อมูลก่อน"}
@@ -1184,7 +1171,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                 <div className="p-3 bg-orange-50 rounded-lg text-center">
                   <Clock className="w-5 h-5 text-orange-500 mx-auto mb-1" />
                   <div className="font-bold text-ghb-dark">
-                    {evaluation.recommendedTerms.termMonths} เดื��น
+                    {evaluation.recommendedTerms.termMonths} เดือน
                   </div>
                   <div className="text-xs text-ghb-gray thai-text">
                     ระยะเวลา
@@ -1331,7 +1318,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
               ประเมินสินเชื่อฟรีแลนซ์
             </h1>
             <Badge variant="outline" className="text-xs">
-              ข��้นตอน {currentStepIndex + 1}/{steps.length}
+              ขั้นตอน {currentStepIndex + 1}/{steps.length}
             </Badge>
           </div>
           <Progress value={progress} className="h-2" />
