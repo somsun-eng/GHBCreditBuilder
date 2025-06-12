@@ -174,7 +174,7 @@ const Education = () => {
     investment: [
       {
         id: "8",
-        title: "การลงทุนเบื���องต้น",
+        title: "การลงทุนเบื้องต้น",
         description: "หลักการลงทุนและการกระจายความเสี่ยง",
         duration: 22,
         type: "video",
@@ -210,7 +210,7 @@ const Education = () => {
       {
         id: "11",
         title: "การวางแผนเกษียณ",
-        description: "เตรียมความพร้อมทางการเงินสำหรั���วัยเกษียณ",
+        description: "เตรียมความพร้อมทางการเงินสำหรับวัยเกษียณ",
         duration: 28,
         type: "article",
         difficulty: "advanced",
@@ -298,7 +298,7 @@ const Education = () => {
     },
     {
       title: "รายได้ผันผวน",
-      description: "บางเดือนมาก บางเดือนน้อย หรื���ไม่มีเลย",
+      description: "บางเดือนมาก บางเดือนน้อย หรือไม่มีเลย",
       score: "โอกาสกลาง",
       color: "text-yellow-600",
       tips: "ธนาคารจะดูค่าเฉลี่ย แต่อาจให้วงเงินน้อยกว่า",
@@ -492,7 +492,7 @@ const Education = () => {
                 {lesson.duration} นาที
               </span>
               <Badge className={getDifficultyColor(lesson.difficulty)}>
-                {lesson.difficulty === "beginner" && "��ริ่มต้น"}
+                {lesson.difficulty === "beginner" && "เริ่มต้น"}
                 {lesson.difficulty === "intermediate" && "กลาง"}
                 {lesson.difficulty === "advanced" && "สูง"}
               </Badge>
