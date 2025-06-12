@@ -69,6 +69,7 @@ type WizardStep =
 const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState<WizardStep>("freelance_type");
+  const [customJobTitle, setCustomJobTitle] = useState("");
   const [profile, setProfile] = useState<Partial<CustomerProfile>>({
     customerType: "freelance", // Default to freelance
     alternativeData: {
@@ -222,7 +223,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     {
       key: "utilityPayments" as keyof CustomerProfile["alternativeData"],
       label: "ชำระค่าน้ำ-ไฟตรงเวลา",
-      description: "แสดงความร���บผิดชอบในการชำระ",
+      description: "แสดงความรับผิดชอบในการชำระ",
       icon: Zap,
       points: 15,
     },
@@ -386,6 +387,34 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
         })}
       </div>
 
+      {/* Custom Job Title Input when "Other" is selected */}
+      {profile.freelanceType === "other" && (
+        <Card className="border-2 border-ghb-primary/20 bg-ghb-primary/5">
+          <CardContent className="p-4">
+            <div className="space-y-3">
+              <Label
+                htmlFor="customJobTitle"
+                className="text-ghb-dark thai-text font-medium"
+              >
+                โปรดระบุอาชีพของคุณ
+              </Label>
+              <Input
+                id="customJobTitle"
+                type="text"
+                placeholder="เช่น นักแปล, ครูสอนพิเศษ, ขายของออนไลน์"
+                value={customJobTitle}
+                onChange={(e) => setCustomJobTitle(e.target.value)}
+                className="h-12 text-lg"
+                maxLength={50}
+              />
+              <p className="text-xs text-ghb-gray thai-text">
+                ข้อมูลนี้จะช่วยให้เราประเมินความเสี่ยงได้แม่นยำขึ้น
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       <Card className="border-l-4 border-l-blue-500 bg-blue-50">
         <CardContent className="p-4">
           <div className="flex items-start space-x-3">
@@ -411,7 +440,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
         <h2 className="text-xl font-bold text-ghb-dark thai-text mb-2">
           ข้อมูลส่วนตัว
         </h2>
-        <p className="text-ghb-gray thai-text">ข้อมูลพื้นฐานสำหรั��การติดต่อ</p>
+        <p className="text-ghb-gray thai-text">ข้อมูลพื้นฐานสำหรับการติดต่อ</p>
       </div>
 
       <div className="space-y-4">
@@ -626,7 +655,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
           ค่าใช้จ่ายและหนี้สิน
         </h2>
         <p className="text-ghb-gray thai-text">
-          รายจ่ายประจำและภาระหนี้ปัจจุบัน
+          ��ายจ่ายประจำและภาระหนี้ปัจจุบัน
         </p>
       </div>
 
@@ -965,7 +994,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
 
       <div>
         <h2 className="text-xl font-bold text-ghb-dark thai-text mb-2">
-          กำลังประเมินข้อมูลฟรีแลนซ์
+          กำลังประเมินข้อมูลฟรีแ��นซ์
         </h2>
         <p className="text-ghb-gray thai-text mb-6">
           ระบบกำลังวิเคราะห์ตามเกณฑ์เฉพาะอาชีพอิสระ
@@ -1090,7 +1119,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                 {recommendation.type === "approval"
                   ? "มีโอกาสผ่านอนุมัติ"
                   : recommendation.type === "conditional_approval"
-                    ? "อนุมัติแบบมีเงื่อนไข"
+                    ? "��นุมัติแบบมีเงื่อนไข"
                     : "ควรปรับปรุงข้อมูลก่อน"}
               </Badge>
             </div>
