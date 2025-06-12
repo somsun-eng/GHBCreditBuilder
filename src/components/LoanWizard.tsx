@@ -245,7 +245,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
   ];
 
   const handleNext = () => {
-    // บั���ทึกอาชีพที่กรอกเองเมื่อเลือก "อื่นๆ"
+    // บันทึกอาชีพที่กรอกเองเมื่อเลือก "อื่นๆ"
     if (
       currentStep === "freelance_type" &&
       profile.freelanceType === "other" &&
@@ -605,7 +605,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             />
           </div>
           <p className="text-sm text-ghb-gray thai-text mt-1">
-            ค่าครองชีพ ค่าเช่า ค่าอาหาร ค่าใช้จ่ายประจำ
+            ค่าครองชีพ ค่าเช่า ค่าอาหาร ค่าใช้จ่ายประจ��
           </p>
         </div>
 
@@ -793,7 +793,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="text-xl font-bold text-ghb-dark thai-text mb-2">
-          เพิ่มคะแนน���วามน่าเชื่อถือ
+          เพิ่มคะแนนความน่าเชื่���ถือ
         </h2>
         <p className="text-ghb-gray thai-text">
           ข้อมูลเหล่านี้จะช่วยเพิ่มโอกาสการอนุมัติ
@@ -894,7 +894,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
               </h3>
               <p className="text-sm text-blue-700 thai-text mt-1 leading-relaxed">
                 เนื่องจากฟรีแลนซ์มักไม่มีประวัติเครดิตจากบัตรเครดิตหรือสินเชื่อ
-                ธนาคารจึงใช้ข��อมูลพฤติกรรมการเงินในชีวิตประจำวันเป็นตัวชี้วัดความน่าเชื่อถือแทน
+                ธนาคารจึงใช้ข้อมูลพฤติกรรมการเงินในชีวิตประจำวันเป็นตัวชี้วัดความน่าเชื่อถือแทน
               </p>
             </div>
           </div>
@@ -926,7 +926,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             status: "completed",
           },
           {
-            step: "���รวจสอบข้อมูลทางเลือก",
+            step: "ตรวจสอบข้อมูลทางเลือก",
             time: "1 นาที",
             status: "completed",
           },
@@ -1209,7 +1209,8 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             ประเมินใหม่
           </Button>
           <Button
-            className="flex-1 h-12 bg-gradient-primary text-white thai-text"
+            className="flex-1 h-12 text-white thai-text"
+            style={{ backgroundColor: "#ef582a" }}
             onClick={() => navigate("/freelancer-guide")}
           >
             {recommendation.type === "approval" ||
