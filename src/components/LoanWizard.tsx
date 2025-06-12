@@ -179,7 +179,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     },
     {
       type: "platform_evidence",
-      title: "หลัก��านจากแพลตฟอร์มงาน",
+      title: "หลักฐานจากแพลตฟอร์มงาน",
       description: "Upwork, Fiverr, Fastwork, Facebook Page",
       required: false,
       icon: Smartphone,
@@ -245,7 +245,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
   ];
 
   const handleNext = () => {
-    // บันทึกอาชีพที่กรอกเองเมื่อเลือก "อื���นๆ"
+    // บันทึกอาชีพที่กรอกเองเมื่อเลือก "อื่นๆ"
     if (
       currentStep === "freelance_type" &&
       profile.freelanceType === "other" &&
@@ -1036,7 +1036,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                 {recommendation.type === "approval"
                   ? "มีโอกาสผ่านอนุมัติ"
                   : recommendation.type === "conditional_approval"
-                    ? "��นุมัติแบบมีเงื่อนไข"
+                    ? "����นุมัติแบบมีเงื่อนไข"
                     : "ควรปรับปรุงข้อมูลก่อน"}
               </Badge>
             </div>
@@ -1229,7 +1229,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
         <div className="px-4 py-4">
           <div className="flex items-center justify-between mb-3">
             <h1 className="text-lg font-bold text-ghb-dark thai-text">
-              ประเมินสินเชื่อฟรีแลนซ์
+              ประเมินสินเชื���อฟรีแลนซ์
             </h1>
             <Badge variant="outline" className="text-xs">
               ขั้นตอน {currentStepIndex + 1}/{steps.length}
@@ -1251,7 +1251,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
       <div className="px-4 py-6">
         <div className="max-w-md mx-auto">
           {currentStep === "freelance_type" && renderFreelanceTypeStep()}
-          {currentStep === "personal_info" && renderPersonalInfoStep()}
+
           {currentStep === "income_proof" && renderIncomeProofStep()}
           {currentStep === "financial" && renderFinancialStep()}
           {currentStep === "loan_details" && renderLoanDetailsStep()}
