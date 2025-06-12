@@ -179,7 +179,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     },
     {
       type: "platform_evidence",
-      title: "หลักฐานจากแพลตฟอร์มงาน",
+      title: "หลัก��านจากแพลตฟอร์มงาน",
       description: "Upwork, Fiverr, Fastwork, Facebook Page",
       required: false,
       icon: Smartphone,
@@ -245,7 +245,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
   ];
 
   const handleNext = () => {
-    // บันทึกอาชีพที่กรอกเองเมื่อเลือก "อื่นๆ"
+    // บันทึกอาชีพที่กรอกเองเมื่อเลือก "อื���นๆ"
     if (
       currentStep === "freelance_type" &&
       profile.freelanceType === "other" &&
@@ -427,99 +427,13 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                 ทำไมต้องระบุประเภทงาน?
               </h3>
               <p className="text-sm text-blue-700 thai-text mt-1 leading-relaxed">
-                ช่วยให้เราประเมินความเ��ี่ยงและเสถียรภาพของรายได้ได้แม่นยำขึ้น
+                ช่วยให้เราประเมินความเสี่ยงและเสถียรภาพของรายได้ได้แม่นยำขึ้น
                 แต่ละประเภทงานมีลักษณะการรับเงินที่แตกต่างกัน
               </p>
             </div>
           </div>
         </CardContent>
       </Card>
-    </div>
-  );
-
-  const renderPersonalInfoStep = () => (
-    <div className="space-y-6">
-      <div className="text-center">
-        <h2 className="text-xl font-bold text-ghb-dark thai-text mb-2">
-          ข้อมูลส่วนตัว
-        </h2>
-        <p className="text-ghb-gray thai-text">ข้อมูลพื้นฐานสำหรับการติดต่อ</p>
-      </div>
-
-      <div className="space-y-4">
-        <div>
-          <Label htmlFor="nationalId" className="text-ghb-dark thai-text">
-            หมายเลขบัตรประชาชน
-          </Label>
-          <Input
-            id="nationalId"
-            type="text"
-            placeholder="1234567890123"
-            value={profile.nationalId || ""}
-            onChange={(e) =>
-              setProfile((prev) => ({
-                ...prev,
-                nationalId: e.target.value.replace(/\D/g, "").slice(0, 13),
-              }))
-            }
-            className="h-12 text-lg"
-            maxLength={13}
-          />
-        </div>
-
-        <div>
-          <Label htmlFor="phoneNumber" className="text-ghb-dark thai-text">
-            หมายเลขโทรศัพท์
-          </Label>
-          <Input
-            id="phoneNumber"
-            type="tel"
-            placeholder="0812345678"
-            value={profile.phoneNumber || ""}
-            onChange={(e) =>
-              setProfile((prev) => ({
-                ...prev,
-                phoneNumber: e.target.value.replace(/\D/g, "").slice(0, 10),
-              }))
-            }
-            className="h-12 text-lg"
-            maxLength={10}
-          />
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <Label htmlFor="firstName" className="text-ghb-dark thai-text">
-              ชื่อ
-            </Label>
-            <Input
-              id="firstName"
-              type="text"
-              placeholder="สมชาย"
-              value={profile.firstName || ""}
-              onChange={(e) =>
-                setProfile((prev) => ({ ...prev, firstName: e.target.value }))
-              }
-              className="h-12"
-            />
-          </div>
-          <div>
-            <Label htmlFor="lastName" className="text-ghb-dark thai-text">
-              นามสกุล
-            </Label>
-            <Input
-              id="lastName"
-              type="text"
-              placeholder="ใจดี"
-              value={profile.lastName || ""}
-              onChange={(e) =>
-                setProfile((prev) => ({ ...prev, lastName: e.target.value }))
-              }
-              className="h-12"
-            />
-          </div>
-        </div>
-      </div>
     </div>
   );
 
