@@ -82,7 +82,7 @@ const Index = () => {
     {
       icon: Clock,
       title: "ได้ผลลัพธ์ทันที",
-      description: "รู้โอกาสการอนุมัติและวงเงินที่คุณกู้ได้ภายใน 5 นา���ี",
+      description: "รู้โอกาสการอนุมัติและวงเงินที่คุณกู้ได้ภายใน 5 นาที",
     },
   ];
 
@@ -335,7 +335,7 @@ const Index = () => {
             </Button>
 
             <p className="text-center text-xs text-ghb-gray mt-4 thai-text">
-              ประเมินฟรี • ไม่เก็บข้อมูลส่วนตัว • ผลลัพธ์ใ�� 5 นาที
+              ประเมินฟรี • ไม่เก็บข้อมูลส่วนตัว • ผลลัพธ์ใน 5 นาที
             </p>
           </div>
         </div>
@@ -350,12 +350,7 @@ const Index = () => {
                   ปลอดภัย 100%
                 </span>
               </div>
-              <div className="flex items-center">
-                <Users className="w-4 h-4 text-ghb-accent mr-2" />
-                <span className="text-xs text-ghb-gray thai-text">
-                  เชี่ยวชาญฟรีแลนซ์
-                </span>
-              </div>
+
               <div className="flex items-center">
                 <Clock className="w-4 h-4 text-ghb-success mr-2" />
                 <span className="text-xs text-ghb-gray thai-text">
@@ -381,7 +376,7 @@ const Index = () => {
               เริ่มประเมินสำหรับฟรีแลนซ์
             </CardTitle>
             <CardDescription className="thai-text">
-              กรอกข้อมูลเพื่อเริ่มต้นการประเมิน
+              กรอกข้อมูลเ���ื่อเริ่มต้นการประเมิน
             </CardDescription>
           </CardHeader>
 
@@ -420,7 +415,7 @@ const Index = () => {
                 maxLength={10}
               />
               <p className="text-xs text-ghb-gray thai-text">
-                สำหรับรับผลการประเมิน
+                สำหรับ��ับผ��การประเมิน
               </p>
             </div>
 
