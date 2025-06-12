@@ -261,24 +261,14 @@ const Profile = () => {
       </Card>
 
       {/* Quick Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-3 gap-4 ml-[115px]">
         <Card>
-          <CardContent className="p-4 text-center">
+          <CardContent className="p-4 text-center flex flex-col justify-center items-center">
             <DollarSign className="w-8 h-8 text-green-500 mx-auto mb-2" />
             <div className="text-lg font-bold text-ghb-dark">
               ฿{customerData.employmentDetails.monthlyIncome.toLocaleString()}
             </div>
             <div className="text-xs text-ghb-gray thai-text">รายได้/เดือน</div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardContent className="p-4 text-center">
-            <BarChart3 className="w-8 h-8 text-blue-500 mx-auto mb-2" />
-            <div className="text-lg font-bold text-ghb-dark">
-              {(customerData.financialInfo.currentDSR * 100).toFixed(1)}%
-            </div>
-            <div className="text-xs text-ghb-gray thai-text">DSR</div>
           </CardContent>
         </Card>
 
@@ -351,7 +341,8 @@ const Profile = () => {
                 ประเมินใหม่
               </Button>
               <Button
-                className="flex-1 bg-gradient-primary text-white thai-text"
+                className="flex-1 text-white thai-text"
+                style={{ backgroundColor: "#fe5000" }}
                 onClick={() => navigate("/document-upload")}
               >
                 ยื่นเอกสาร
@@ -464,63 +455,6 @@ const Profile = () => {
                   customerData.financialInfo.existingDebts
                 ).toLocaleString()}
               </span>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* DSR Analysis */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-ghb-dark thai-text">
-            วิเคราะห์อัตราส่วนหนี้ (DSR)
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-ghb-gray thai-text">DSR ปัจจุบัน</span>
-              <span className="text-2xl font-bold text-ghb-primary">
-                {(customerData.financialInfo.currentDSR * 100).toFixed(1)}%
-              </span>
-            </div>
-            <Progress
-              value={customerData.financialInfo.currentDSR * 100}
-              className="h-3"
-            />
-            <div className="flex justify-between text-xs text-ghb-gray">
-              <span>0%</span>
-              <span className="text-red-500">40% (เกณฑ์สูงสุด)</span>
-              <span>100%</span>
-            </div>
-
-            <div
-              className={cn(
-                "p-3 rounded-lg",
-                customerData.financialInfo.currentDSR <= 0.4
-                  ? "bg-green-50 border border-green-200"
-                  : "bg-red-50 border border-red-200",
-              )}
-            >
-              <div className="flex items-center">
-                {customerData.financialInfo.currentDSR <= 0.4 ? (
-                  <CheckCircle2 className="w-5 h-5 text-green-500 mr-2" />
-                ) : (
-                  <AlertCircle className="w-5 h-5 text-red-500 mr-2" />
-                )}
-                <span
-                  className={cn(
-                    "text-sm thai-text",
-                    customerData.financialInfo.currentDSR <= 0.4
-                      ? "text-green-700"
-                      : "text-red-700",
-                  )}
-                >
-                  {customerData.financialInfo.currentDSR <= 0.4
-                    ? "DSR อยู่ในเกณฑ์ดี เหมาะสำหรับการขอสินเชื่อ"
-                    : "DSR สูงเกินเกณฑ์ ควรลดภาระหนี้ก่อนขอสินเชื่อ"}
-                </span>
-              </div>
             </div>
           </div>
         </CardContent>
@@ -937,10 +871,6 @@ const Profile = () => {
               <Button variant="outline" size="sm">
                 <Edit className="w-4 h-4 mr-1" />
                 แก้ไข
-              </Button>
-              <Button variant="outline" size="sm">
-                <Share2 className="w-4 h-4 mr-1" />
-                แชร์
               </Button>
             </div>
           </div>

@@ -350,12 +350,7 @@ const Index = () => {
                   ปลอดภัย 100%
                 </span>
               </div>
-              <div className="flex items-center">
-                <Users className="w-4 h-4 text-ghb-accent mr-2" />
-                <span className="text-xs text-ghb-gray thai-text">
-                  เชี่ยวชาญฟรีแลนซ์
-                </span>
-              </div>
+
               <div className="flex items-center">
                 <Clock className="w-4 h-4 text-ghb-success mr-2" />
                 <span className="text-xs text-ghb-gray thai-text">
