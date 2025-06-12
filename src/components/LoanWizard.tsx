@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
   Briefcase,
@@ -213,7 +213,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     },
     {
       value: "emergency",
-      label: "เหตุฉุกเฉิน",
+      label: "เหตุฉุก��ฉิน",
       icon: AlertTriangle,
       description: "ค่ารักษาพยาบาล เหตุจำเป็น",
     },
@@ -311,7 +311,11 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
   const canProceed = () => {
     switch (currentStep) {
       case "freelance_type":
-        return true; // Always can proceed since default is set
+        return (
+          profile.freelanceType &&
+          (profile.freelanceType !== "other" ||
+            customJobTitle.trim().length > 0)
+        );
       case "personal_info":
         return !!(
           profile.nationalId &&
@@ -408,7 +412,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                 maxLength={50}
               />
               <p className="text-xs text-ghb-gray thai-text">
-                ข้อมูลนี้จะช่วยให้เราประเมินความเสี่ยงได้แม่นยำขึ้น
+                ข้อมูลนี้จะช่วยให้เราประเมินความเสี่ยงได้แ��่นยำขึ้น
               </p>
             </div>
           </CardContent>
@@ -638,7 +642,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                   • ถ้ารายได้ไม่สม่ำเสมอ ให้ดูค่าเฉลี่ย 6-12 เดือน
                 </p>
                 <p className="text-sm text-orange-700 thai-text">
-                  • เก็บหลักฐานงานจากลูกค้า/แพลตฟอร์มเสริม
+                  • เก็บหลักฐาน��านจากลูกค้า/แพลตฟอร์มเสริม
                 </p>
               </div>
             </div>
@@ -655,7 +659,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
           ค่าใช้จ่ายและหนี้สิน
         </h2>
         <p className="text-ghb-gray thai-text">
-          ��ายจ่ายประจำและภาระหนี้ปัจจุบัน
+          รายจ่ายประจำและภาระหนี้ปัจจุบัน
         </p>
       </div>
 
@@ -994,7 +998,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
 
       <div>
         <h2 className="text-xl font-bold text-ghb-dark thai-text mb-2">
-          กำลังประเมินข้อมูลฟรีแ��นซ์
+          กำลังประเมินข้อมูลฟรีแลนซ์
         </h2>
         <p className="text-ghb-gray thai-text mb-6">
           ระบบกำลังวิเคราะห์ตามเกณฑ์เฉพาะอาชีพอิสระ
@@ -1197,7 +1201,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                   / เดือน
                 </div>
                 <p className="text-sm text-ghb-gray thai-text">
-                  ธนาคารใช้รายได้เฉลี่ยนี้ในการคำนวณ
+                  ธนาคารใช้รายได้เฉลี่ยนี้ในการคำน���ณ
                   โดยพิจารณาความผันผวนของอาชีพอิสระ
                 </p>
               </div>
