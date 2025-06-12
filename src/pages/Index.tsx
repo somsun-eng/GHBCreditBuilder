@@ -376,7 +376,7 @@ const Index = () => {
               เริ่มประเมินสำหรับฟรีแลนซ์
             </CardTitle>
             <CardDescription className="thai-text">
-              กรอกข้อมูลเ���ื่อเริ่มต้นการประเมิน
+              กรอกข้อมูลเพื่อเริ่มต้นการประเมิน
             </CardDescription>
           </CardHeader>
 
@@ -415,7 +415,7 @@ const Index = () => {
                 maxLength={10}
               />
               <p className="text-xs text-ghb-gray thai-text">
-                สำหรับ��ับผ��การประเมิน
+                สำหรับรับผลการประเมิน
               </p>
             </div>
 
