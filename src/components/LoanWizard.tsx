@@ -245,7 +245,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
   ];
 
   const handleNext = () => {
-    // บันทึกอาชีพที่กรอกเองเมื่อเลือก "อื่นๆ"
+    // บั���ทึกอาชีพที่กรอกเองเมื่อเลือก "อื่นๆ"
     if (
       currentStep === "freelance_type" &&
       profile.freelanceType === "other" &&
@@ -793,7 +793,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="text-xl font-bold text-ghb-dark thai-text mb-2">
-          เพิ่มคะแนนความน่าเชื่อถือ
+          เพิ่มคะแนน���วามน่าเชื่อถือ
         </h2>
         <p className="text-ghb-gray thai-text">
           ข้อมูลเหล่านี้จะช่วยเพิ่มโอกาสการอนุมัติ
@@ -894,7 +894,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
               </h3>
               <p className="text-sm text-blue-700 thai-text mt-1 leading-relaxed">
                 เนื่องจากฟรีแลนซ์มักไม่มีประวัติเครดิตจากบัตรเครดิตหรือสินเชื่อ
-                ธนาคารจึงใช้ข้อมูลพฤติกรรมการเงินในชีวิตประจำวันเป็นตัวชี้วัดความน่าเชื่อถือแทน
+                ธนาคารจึงใช้ข��อมูลพฤติกรรมการเงินในชีวิตประจำวันเป็นตัวชี้วัดความน่าเชื่อถือแทน
               </p>
             </div>
           </div>
@@ -926,7 +926,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             status: "completed",
           },
           {
-            step: "ตรวจสอบข้อมูลทางเลือก",
+            step: "���รวจสอบข้อมูลทางเลือก",
             time: "1 นาที",
             status: "completed",
           },
@@ -1036,7 +1036,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                 {recommendation.type === "approval"
                   ? "มีโอกาสผ่านอนุมัติ"
                   : recommendation.type === "conditional_approval"
-                    ? "����นุมัติแบบมีเงื่อนไข"
+                    ? "��นุมัติแบบมีเงื่อนไข"
                     : "ควรปรับปรุงข้อมูลก่อน"}
               </Badge>
             </div>
@@ -1229,7 +1229,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
         <div className="px-4 py-4">
           <div className="flex items-center justify-between mb-3">
             <h1 className="text-lg font-bold text-ghb-dark thai-text">
-              ประเมินสินเชื���อฟรีแลนซ์
+              ประเมินสินเชื่อฟรีแลนซ์
             </h1>
             <Badge variant="outline" className="text-xs">
               ขั้นตอน {currentStepIndex + 1}/{steps.length}
@@ -1279,7 +1279,8 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
               <Button
                 onClick={handleEvaluation}
                 disabled={!canProceed() || isProcessing}
-                className="flex-1 h-12 bg-gradient-primary text-white font-semibold thai-text"
+                className="flex-1 h-12 text-white font-semibold thai-text"
+                style={{ backgroundColor: "#ef582a" }}
               >
                 {isProcessing ? "กำลังประเมิน..." : "ประเมินโอกาสกู้เงิน"}
                 <Calculator className="w-4 h-4 ml-2" />
