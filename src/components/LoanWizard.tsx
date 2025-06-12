@@ -605,7 +605,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             />
           </div>
           <p className="text-sm text-ghb-gray thai-text mt-1">
-            ค่าครองชีพ ค่าเช่า ค่าอาหาร ค่าใช้จ่ายประจ��
+            ค่าครองชีพ ค่าเช่า ค่าอาหาร ค่าใช้จ่ายประจำ
           </p>
         </div>
 
@@ -793,7 +793,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="text-xl font-bold text-ghb-dark thai-text mb-2">
-          เพิ่มคะแนนความน่าเชื่���ถือ
+          เพิ่มคะแนนความน่าเชื่อถือ
         </h2>
         <p className="text-ghb-gray thai-text">
           ข้อมูลเหล่านี้จะช่วยเพิ่มโอกาสการอนุมัติ
@@ -1036,7 +1036,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                 {recommendation.type === "approval"
                   ? "มีโอกาสผ่านอนุมัติ"
                   : recommendation.type === "conditional_approval"
-                    ? "��นุมัติแบบมีเงื่อนไข"
+                    ? "อนุมัติแบบมีเงื่อนไข"
                     : "ควรปรับปรุงข้อมูลก่อน"}
               </Badge>
             </div>
