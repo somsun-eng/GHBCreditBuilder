@@ -237,7 +237,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     {
       key: "savingsHistory" as keyof CustomerProfile["alternativeData"],
       label: "มีการออมเงินสม่ำเสมอ",
-      description: "แสดงวินัย��างการเงิน",
+      description: "แสดงวินัยทางการเงิน",
       icon: PiggyBank,
       points: 20,
     },
@@ -437,7 +437,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             <Info className="w-5 h-5 text-blue-500 mt-0.5" />
             <div>
               <h3 className="font-semibold text-blue-900 thai-text">
-                ทำไมต้องระ���ุประเภทงาน?
+                ทำไมต้องระ��ุประเภทงาน?
               </h3>
               <p className="text-sm text-blue-700 thai-text mt-1 leading-relaxed">
                 ช่วยให้เราประเมินความเสี่ยงและเสถียรภาพของรายได้ได้แม่นยำขึ้น
@@ -605,7 +605,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
       <Card>
         <CardHeader>
           <CardTitle className="text-ghb-dark thai-text">
-            หลักฐานที่คุณมี
+            หลักฐ��นที่คุณมี
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -822,7 +822,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             </div>
           </div>
           <p className="text-sm text-ghb-gray thai-text text-center mt-2">
-            วงเงินสำหรับฟร���แลนซ์มักอยู่ที่ 200,000-500,000 บาท
+            วงเงินสำหรับฟรีแลนซ์มักอยู่ที่ 200,000-500,000 บาท
           </p>
         </div>
 
@@ -1025,7 +1025,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             status: "completed",
           },
           {
-            step: "ตรวจสอบข้อมูลท��งเลือก",
+            step: "ตรวจสอบข้อมูลทางเลือก",
             time: "1 นาที",
             status: "completed",
           },
@@ -1168,7 +1168,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                     {evaluation.recommendedTerms.interestRate}%
                   </div>
                   <div className="text-xs text-ghb-gray thai-text">
-                    อัตราดอกเบ��้ย
+                    อัตราดอกเบี้ย
                   </div>
                 </div>
                 <div className="p-3 bg-purple-50 rounded-lg text-center">
@@ -1387,7 +1387,8 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
               <Button
                 onClick={handleNext}
                 disabled={!canProceed()}
-                className="flex-1 h-12 bg-gradient-primary text-white font-semibold thai-text"
+                className="flex-1 h-12 text-white font-semibold thai-text"
+                style={{ backgroundColor: "#ef582a" }}
               >
                 ต่อไป
                 <ArrowRight className="w-4 h-4 ml-2" />
