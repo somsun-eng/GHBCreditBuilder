@@ -213,7 +213,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     },
     {
       value: "emergency",
-      label: "เหตุฉุก��ฉิน",
+      label: "เหตุฉุกเฉิน",
       icon: AlertTriangle,
       description: "ค่ารักษาพยาบาล เหตุจำเป็น",
     },
@@ -237,7 +237,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
     {
       key: "savingsHistory" as keyof CustomerProfile["alternativeData"],
       label: "มีการออมเงินสม่ำเสมอ",
-      description: "แสดงวินัยทางการเงิน",
+      description: "แสดงวินัย��างการเงิน",
       icon: PiggyBank,
       points: 20,
     },
@@ -251,6 +251,18 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
   ];
 
   const handleNext = () => {
+    // บันทึกอาชีพที่กรอกเองเมื่อเลือก "อื่นๆ"
+    if (
+      currentStep === "freelance_type" &&
+      profile.freelanceType === "other" &&
+      customJobTitle.trim()
+    ) {
+      setProfile((prev) => ({
+        ...prev,
+        customJobTitle: customJobTitle.trim(),
+      }));
+    }
+
     const currentIndex = steps.findIndex((step) => step.key === currentStep);
     if (currentIndex < steps.length - 1) {
       setCurrentStep(steps[currentIndex + 1].key);
@@ -412,7 +424,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                 maxLength={50}
               />
               <p className="text-xs text-ghb-gray thai-text">
-                ข้อมูลนี้จะช่วยให้เราประเมินความเสี่ยงได้แ��่นยำขึ้น
+                ข้อมูลนี้จะช่วยให้เราประเมินความเสี่ยงได้แม่นยำขึ้น
               </p>
             </div>
           </CardContent>
@@ -425,7 +437,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             <Info className="w-5 h-5 text-blue-500 mt-0.5" />
             <div>
               <h3 className="font-semibold text-blue-900 thai-text">
-                ทำไมต้องระบุประเภทงาน?
+                ทำไมต้องระ���ุประเภทงาน?
               </h3>
               <p className="text-sm text-blue-700 thai-text mt-1 leading-relaxed">
                 ช่วยให้เราประเมินความเสี่ยงและเสถียรภาพของรายได้ได้แม่นยำขึ้น
@@ -642,7 +654,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                   • ถ้ารายได้ไม่สม่ำเสมอ ให้ดูค่าเฉลี่ย 6-12 เดือน
                 </p>
                 <p className="text-sm text-orange-700 thai-text">
-                  • เก็บหลักฐาน��านจากลูกค้า/แพลตฟอร์มเสริม
+                  • เก็บหลักฐานงานจากลูกค้า/แพลตฟอร์มเสริม
                 </p>
               </div>
             </div>
@@ -810,7 +822,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             </div>
           </div>
           <p className="text-sm text-ghb-gray thai-text text-center mt-2">
-            วงเงินสำหรับฟรีแลนซ์มักอยู่ที่ 200,000-500,000 บาท
+            วงเงินสำหรับฟร���แลนซ์มักอยู่ที่ 200,000-500,000 บาท
           </p>
         </div>
 
@@ -1013,7 +1025,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
             status: "completed",
           },
           {
-            step: "ตรวจสอบข้อมูลทางเลือก",
+            step: "ตรวจสอบข้อมูลท��งเลือก",
             time: "1 นาที",
             status: "completed",
           },
@@ -1156,7 +1168,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                     {evaluation.recommendedTerms.interestRate}%
                   </div>
                   <div className="text-xs text-ghb-gray thai-text">
-                    อัตราดอกเบี้ย
+                    อัตราดอกเบ��้ย
                   </div>
                 </div>
                 <div className="p-3 bg-purple-50 rounded-lg text-center">
@@ -1201,7 +1213,7 @@ const LoanWizard: React.FC<LoanWizardProps> = ({ onComplete }) => {
                   / เดือน
                 </div>
                 <p className="text-sm text-ghb-gray thai-text">
-                  ธนาคารใช้รายได้เฉลี่ยนี้ในการคำน���ณ
+                  ธนาคารใช้รายได้เฉลี่ยนี้ในการคำนวณ
                   โดยพิจารณาความผันผวนของอาชีพอิสระ
                 </p>
               </div>
