@@ -45,10 +45,10 @@ const navItems = [
 ];
 
 const mainNavItems = [
-  { label: "สินเชื่อ", path: "/loan-simulator" },
+  { label: "ประเมินสินเชื่อ", path: "/loan-simulator" },
+  { label: "ศูนย์การเรียนรู้", path: "/education" },
   { label: "ภารกิจ", path: "/missions" },
-  { label: "การเรียนรู้", path: "/education" },
-  { label: "บริการดิจิทัล", path: "/credit-sandbox" },
+  { label: "เครดิตทดลอง", path: "/credit-sandbox" },
 ];
 
 interface NavbarProps {
