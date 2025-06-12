@@ -33,7 +33,7 @@ import {
   ArrowRight,
   Settings,
   LogOut,
-  Shield
+  Shield,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CustomerProfile, LoanEvaluation } from "@/lib/bankingTypes";
@@ -41,9 +41,15 @@ import { getCustomerTypeLabel } from "@/lib/bankingCalculations";
 
 const Profile = () => {
   const navigate = useNavigate();
-  const [customerData, setCustomerData] = useState<CustomerProfile | null>(null);
-  const [lastEvaluation, setLastEvaluation] = useState<LoanEvaluation | null>(null);
-  const [activeTab, setActiveTab] = useState<'overview' | 'financial' | 'credit' | 'documents'>('overview');
+  const [customerData, setCustomerData] = useState<CustomerProfile | null>(
+    null,
+  );
+  const [lastEvaluation, setLastEvaluation] = useState<LoanEvaluation | null>(
+    null,
+  );
+  const [activeTab, setActiveTab] = useState<
+    "overview" | "financial" | "credit" | "documents"
+  >("overview");
 
   // Mock data - ในการใช้งานจริงจะดึงจาก localStorage หรือ API
   useEffect(() => {
@@ -59,28 +65,28 @@ const Profile = () => {
         type: "freelance",
         monthlyIncome: 35000,
         incomeDocuments: ["ภ.พ.30", "Bank Statement"],
-        yearsOfWork: 3
+        yearsOfWork: 3,
       },
       financialInfo: {
         monthlyExpenses: 18000,
         existingDebts: 5000,
         savingsAccount: true,
         bankStatement: true,
-        currentDSR: 0.28
+        currentDSR: 0.28,
       },
       creditInfo: {
         crbScore: 650,
         hasDefaultHistory: false,
         hasLoanHistory: true,
-        paymentHistory: "good"
+        paymentHistory: "good",
       },
       alternativeData: {
         utilityPayments: true,
         phonePayments: true,
         savingsHistory: true,
         eCommerceActivity: true,
-        socialMediaPresence: false
-      }
+        socialMediaPresence: false,
+      },
     };
 
     const mockEvaluation: LoanEvaluation = {
@@ -88,7 +94,7 @@ const Profile = () => {
       affordability: {
         maxLoanAmount: 420000,
         recommendedAmount: 350000,
-        monthlyPaymentCapacity: 12000
+        monthlyPaymentCapacity: 12000,
       },
       riskAssessment: {
         level: "medium",
@@ -102,16 +108,16 @@ const Profile = () => {
         explanation: [
           "คะแนนเครดิตดั้งเดิม: 650",
           "คะแนนจากข้อมูลทางเลือก: 47",
-          "คะแนนรวม: 664"
-        ]
+          "คะแนนรวม: 664",
+        ],
       },
       approvalProbability: 73,
       recommendedTerms: {
         interestRate: 8.5,
         termMonths: 60,
         monthlyPayment: 9850,
-        totalPayment: 591000
-      }
+        totalPayment: 591000,
+      },
     };
 
     setCustomerData(mockCustomerData);
@@ -145,71 +151,71 @@ const Profile = () => {
     );
   }
 
-  const getCustomerTypeIcon = (type: CustomerProfile['customerType']) => {
+  const getCustomerTypeIcon = (type: CustomerProfile["customerType"]) => {
     switch (type) {
-      case 'regular_employee':
+      case "regular_employee":
         return Briefcase;
-      case 'freelance':
+      case "freelance":
         return User;
-      case 'welfare_customer':
+      case "welfare_customer":
         return Building;
       default:
         return User;
     }
   };
 
-  const getCustomerTypeColor = (type: CustomerProfile['customerType']) => {
+  const getCustomerTypeColor = (type: CustomerProfile["customerType"]) => {
     switch (type) {
-      case 'regular_employee':
-        return 'bg-blue-500';
-      case 'freelance':
-        return 'bg-purple-500';
-      case 'welfare_customer':
-        return 'bg-green-500';
+      case "regular_employee":
+        return "bg-blue-500";
+      case "freelance":
+        return "bg-purple-500";
+      case "welfare_customer":
+        return "bg-green-500";
       default:
-        return 'bg-gray-500';
+        return "bg-gray-500";
     }
   };
 
   const getCreditScoreColor = (score: number) => {
-    if (score >= 750) return 'text-green-600';
-    if (score >= 650) return 'text-blue-600';
-    if (score >= 550) return 'text-yellow-600';
-    return 'text-red-600';
+    if (score >= 750) return "text-green-600";
+    if (score >= 650) return "text-blue-600";
+    if (score >= 550) return "text-yellow-600";
+    return "text-red-600";
   };
 
   const getCreditScoreLabel = (score: number) => {
-    if (score >= 750) return 'ดีเยี่ยม';
-    if (score >= 650) return 'ดี';
-    if (score >= 550) return 'ปานกลาง';
-    return 'ต้องปรับปรุง';
+    if (score >= 750) return "ดีเยี่ยม";
+    if (score >= 650) return "ดี";
+    if (score >= 550) return "ปานกลาง";
+    return "ต้องปรับปรุง";
   };
 
   const alternativeDataItems = [
     {
-      key: 'utilityPayments' as keyof CustomerProfile['alternativeData'],
-      label: 'การชำระค่าสาธารณูปโภค',
+      key: "utilityPayments" as keyof CustomerProfile["alternativeData"],
+      label: "การชำระค่าสาธารณูปโภค",
       icon: Zap,
-      points: 15
+      points: 15,
     },
     {
-      key: 'phonePayments' as keyof CustomerProfile['alternativeData'],
+      key: "phonePayments" as keyof CustomerProfile["alternativeData"],
       label: "การชำระค่าโทรศัพท์",
       icon: Smartphone,
-      points: 12
+      points: 12,
     },
     {
-      key: 'savingsHistory' as keyof CustomerProfile['alternativeData'],
+      key: "savingsHistory" as keyof CustomerProfile["alternativeData"],
       label: "ประวัติการออมเงิน",
       icon: PiggyBank,
-      points: 20
+      points: 20,
     },
     {
-      key: 'eCommerceActivity' as keyof CustomerProfile['alternativeData'],
-      label: 'กิจกรรม E-Commerce',
+      key: "eCommerceActivity" as keyof CustomerProfile["alternativeData"],
+      label: "กิจกรรม E-Commerce",
       icon: CreditCard,
-      points: 8
-    }
+      points: 8,
+    },
   ];
 
   const renderOverviewTab = () => (
@@ -218,10 +224,15 @@ const Profile = () => {
       <Card className="border-0 shadow-lg bg-gradient-to-r from-white to-ghb-light/30">
         <CardContent className="p-6">
           <div className="flex items-center space-x-4">
-            <div className={`w-16 h-16 ${getCustomerTypeColor(customerData.customerType)} rounded-2xl flex items-center justify-center`}>
-              {React.createElement(getCustomerTypeIcon(customerData.customerType), {
-                className: "w-8 h-8 text-white"
-              })}
+            <div
+              className={`w-16 h-16 ${getCustomerTypeColor(customerData.customerType)} rounded-2xl flex items-center justify-center`}
+            >
+              {React.createElement(
+                getCustomerTypeIcon(customerData.customerType),
+                {
+                  className: "w-8 h-8 text-white",
+                },
+              )}
             </div>
             <div className="flex-1">
               <h1 className="text-2xl font-bold text-ghb-dark thai-text">
@@ -234,7 +245,10 @@ const Profile = () => {
                 <div className="flex items-center">
                   <Phone className="w-4 h-4 text-ghb-gray mr-1" />
                   <span className="text-sm text-ghb-gray">
-                    {customerData.phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3")}
+                    {customerData.phoneNumber.replace(
+                      /(\d{3})(\d{3})(\d{4})/,
+                      "$1-$2-$3",
+                    )}
                   </span>
                 </div>
                 <Badge variant="outline" className="text-xs">
@@ -260,9 +274,13 @@ const Profile = () => {
 
         <Card>
           <CardContent className="p-4 text-center">
-            <Star className={`w-8 h-8 mx-auto mb-2 ${getCreditScoreColor(customerData.creditInfo.crbScore || 0)}`} />
-            <div className={`text-lg font-bold ${getCreditScoreColor(customerData.creditInfo.crbScore || 0)}`}>
-              {customerData.creditInfo.crbScore || 'N/A'}
+            <Star
+              className={`w-8 h-8 mx-auto mb-2 ${getCreditScoreColor(customerData.creditInfo.crbScore || 0)}`}
+            />
+            <div
+              className={`text-lg font-bold ${getCreditScoreColor(customerData.creditInfo.crbScore || 0)}`}
+            >
+              {customerData.creditInfo.crbScore || "N/A"}
             </div>
             <div className="text-xs text-ghb-gray thai-text">คะแนนเครดิต</div>
           </CardContent>
@@ -283,23 +301,30 @@ const Profile = () => {
       {lastEvaluation && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-ghb-dark thai-text">การประเมินล่าสุด</CardTitle>
+            <CardTitle className="text-ghb-dark thai-text">
+              การประเมินล่าสุด
+            </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="p-3 bg-blue-50 rounded-lg">
                 <div className="flex items-center mb-2">
                   <DollarSign className="w-4 h-4 text-blue-500 mr-2" />
-                  <span className="text-sm text-ghb-gray thai-text">จำนวนที่แนะนำ</span>
+                  <span className="text-sm text-ghb-gray thai-text">
+                    จำนวนที่แนะนำ
+                  </span>
                 </div>
                 <div className="text-lg font-bold text-ghb-dark">
-                  ฿{lastEvaluation.affordability.recommendedAmount.toLocaleString()}
+                  ฿
+                  {lastEvaluation.affordability.recommendedAmount.toLocaleString()}
                 </div>
               </div>
               <div className="p-3 bg-green-50 rounded-lg">
                 <div className="flex items-center mb-2">
                   <TrendingUp className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-ghb-gray thai-text">อัตราดอกเบี้ย</span>
+                  <span className="text-sm text-ghb-gray thai-text">
+                    อัตราดอกเบี้ย
+                  </span>
                 </div>
                 <div className="text-lg font-bold text-ghb-dark">
                   {lastEvaluation.recommendedTerms?.interestRate}%
@@ -317,7 +342,7 @@ const Profile = () => {
               </Button>
               <Button
                 className="flex-1 text-white thai-text"
-                style={{ backgroundColor: '#fe5000' }}
+                style={{ backgroundColor: "#fe5000" }}
                 onClick={() => navigate("/document-upload")}
               >
                 ยื่นเอกสาร
@@ -330,7 +355,9 @@ const Profile = () => {
       {/* Quick Actions */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-ghb-dark thai-text">การดำเนินการด่วน</CardTitle>
+          <CardTitle className="text-ghb-dark thai-text">
+            การดำเนินการด่วน
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 gap-3">
@@ -377,14 +404,18 @@ const Profile = () => {
       {/* Income & Expenses */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-ghb-dark thai-text">สถานะทางการเงิน</CardTitle>
+          <CardTitle className="text-ghb-dark thai-text">
+            สถานะทางการเงิน
+          </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="p-4 bg-green-50 rounded-lg">
               <div className="flex items-center mb-2">
                 <TrendingUp className="w-5 h-5 text-green-500 mr-2" />
-                <span className="text-sm text-ghb-gray thai-text">รายได้ต่อเดือน</span>
+                <span className="text-sm text-ghb-gray thai-text">
+                  รายได้ต่อเดือน
+                </span>
               </div>
               <div className="text-xl font-bold text-green-600">
                 ฿{customerData.employmentDetails.monthlyIncome.toLocaleString()}
@@ -393,7 +424,9 @@ const Profile = () => {
             <div className="p-4 bg-red-50 rounded-lg">
               <div className="flex items-center mb-2">
                 <DollarSign className="w-5 h-5 text-red-500 mr-2" />
-                <span className="text-sm text-ghb-gray thai-text">รายจ่ายต่อเดือน</span>
+                <span className="text-sm text-ghb-gray thai-text">
+                  รายจ่ายต่อเดือน
+                </span>
               </div>
               <div className="text-xl font-bold text-red-600">
                 ฿{customerData.financialInfo.monthlyExpenses.toLocaleString()}
@@ -403,52 +436,69 @@ const Profile = () => {
 
           <div className="p-4 bg-gray-50 rounded-lg">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-ghb-gray thai-text">ภาระหนี้ต่อเดือน</span>
+              <span className="text-sm text-ghb-gray thai-text">
+                ภาระหนี้ต่อเดือน
+              </span>
               <span className="text-lg font-bold text-ghb-dark">
                 ฿{customerData.financialInfo.existingDebts.toLocaleString()}
               </span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-sm text-ghb-gray thai-text">เงินเหลือต่อเดือน</span>
+              <span className="text-sm text-ghb-gray thai-text">
+                เงินเหลือต่อเดือน
+              </span>
               <span className="text-lg font-bold text-ghb-primary">
-                ฿{(customerData.employmentDetails.monthlyIncome - customerData.financialInfo.monthlyExpenses - customerData.financialInfo.existingDebts).toLocaleString()}
+                ฿
+                {(
+                  customerData.employmentDetails.monthlyIncome -
+                  customerData.financialInfo.monthlyExpenses -
+                  customerData.financialInfo.existingDebts
+                ).toLocaleString()}
               </span>
             </div>
           </div>
         </CardContent>
       </Card>
 
-
-      </Card>
-
       {/* Loan Capacity */}
       {lastEvaluation && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-ghb-dark thai-text">ความสามารถในการกู้</CardTitle>
+            <CardTitle className="text-ghb-dark thai-text">
+              ความสามารถในการกู้
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-3 bg-blue-50 rounded-lg">
-                  <div className="text-sm text-ghb-gray thai-text mb-1">วงเงินสูงสุด</div>
+                  <div className="text-sm text-ghb-gray thai-text mb-1">
+                    วงเงินสูงสุด
+                  </div>
                   <div className="text-lg font-bold text-blue-600">
-                    ฿{lastEvaluation.affordability.maxLoanAmount.toLocaleString()}
+                    ฿
+                    {lastEvaluation.affordability.maxLoanAmount.toLocaleString()}
                   </div>
                 </div>
                 <div className="text-center p-3 bg-green-50 rounded-lg">
-                  <div className="text-sm text-ghb-gray thai-text mb-1">วงเงินที่แนะนำ</div>
+                  <div className="text-sm text-ghb-gray thai-text mb-1">
+                    วงเงินที่แนะนำ
+                  </div>
                   <div className="text-lg font-bold text-green-600">
-                    ฿{lastEvaluation.affordability.recommendedAmount.toLocaleString()}
+                    ฿
+                    {lastEvaluation.affordability.recommendedAmount.toLocaleString()}
                   </div>
                 </div>
               </div>
 
               <div className="p-3 bg-purple-50 rounded-lg">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-ghb-gray thai-text">ความสามารถผ่อนต่อเดือน</span>
+                  <span className="text-sm text-ghb-gray thai-text">
+                    ความสามารถผ่อนต่อเดือน
+                  </span>
                   <span className="text-lg font-bold text-purple-600">
-                    ฿{lastEvaluation.affordability.monthlyPaymentCapacity.toLocaleString()}
+                    ฿
+                    {lastEvaluation.affordability.monthlyPaymentCapacity.toLocaleString()}
                   </span>
                 </div>
               </div>
@@ -468,22 +518,29 @@ const Profile = () => {
         </CardHeader>
         <CardContent>
           <div className="text-center mb-6">
-            <div className={`text-4xl font-bold mb-2 ${getCreditScoreColor(customerData.creditInfo.crbScore || 0)}`}>
-              {customerData.creditInfo.crbScore || 'ไม่มีข้อมูล'}
+            <div
+              className={`text-4xl font-bold mb-2 ${getCreditScoreColor(customerData.creditInfo.crbScore || 0)}`}
+            >
+              {customerData.creditInfo.crbScore || "ไม่มีข้อมูล"}
             </div>
-            <Badge className={cn(
-              "text-sm",
-              customerData.creditInfo.crbScore && customerData.creditInfo.crbScore >= 650
-                ? "bg-green-100 text-green-700"
-                : "bg-yellow-100 text-yellow-700"
-            )}>
+            <Badge
+              className={cn(
+                "text-sm",
+                customerData.creditInfo.crbScore &&
+                  customerData.creditInfo.crbScore >= 650
+                  ? "bg-green-100 text-green-700"
+                  : "bg-yellow-100 text-yellow-700",
+              )}
+            >
               {getCreditScoreLabel(customerData.creditInfo.crbScore || 0)}
             </Badge>
           </div>
 
           <div className="space-y-3">
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <span className="text-sm text-ghb-gray thai-text">ประวัติการผิดนัดชำระ</span>
+              <span className="text-sm text-ghb-gray thai-text">
+                ประวัติการผิดนัดชำระ
+              </span>
               <div className="flex items-center">
                 {customerData.creditInfo.hasDefaultHistory ? (
                   <>
@@ -493,14 +550,18 @@ const Profile = () => {
                 ) : (
                   <>
                     <CheckCircle2 className="w-4 h-4 text-green-500 mr-1" />
-                    <span className="text-sm text-green-600 thai-text">ไม่มี</span>
+                    <span className="text-sm text-green-600 thai-text">
+                      ไม่มี
+                    </span>
                   </>
                 )}
               </div>
             </div>
 
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <span className="text-sm text-ghb-gray thai-text">ประวัติสินเชื่อ</span>
+              <span className="text-sm text-ghb-gray thai-text">
+                ประวัติสินเชื่อ
+              </span>
               <div className="flex items-center">
                 {customerData.creditInfo.hasLoanHistory ? (
                   <>
@@ -510,19 +571,28 @@ const Profile = () => {
                 ) : (
                   <>
                     <AlertCircle className="w-4 h-4 text-gray-500 mr-1" />
-                    <span className="text-sm text-gray-600 thai-text">ไม่มี</span>
+                    <span className="text-sm text-gray-600 thai-text">
+                      ไม่มี
+                    </span>
                   </>
                 )}
               </div>
             </div>
 
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <span className="text-sm text-ghb-gray thai-text">คุณภาพการชำระ</span>
+              <span className="text-sm text-ghb-gray thai-text">
+                คุณภาพการชำระ
+              </span>
               <Badge variant="outline" className="text-xs">
-                {customerData.creditInfo.paymentHistory === 'excellent' ? 'ดีเยี่ยม' :
-                 customerData.creditInfo.paymentHistory === 'good' ? 'ดี' :
-                 customerData.creditInfo.paymentHistory === 'fair' ? 'ปานกลาง' :
-                 customerData.creditInfo.paymentHistory === 'poor' ? 'ต้องปรับปรุง' : 'ไม่ทราบ'}
+                {customerData.creditInfo.paymentHistory === "excellent"
+                  ? "ดีเยี่ยม"
+                  : customerData.creditInfo.paymentHistory === "good"
+                    ? "ดี"
+                    : customerData.creditInfo.paymentHistory === "fair"
+                      ? "ปานกลาง"
+                      : customerData.creditInfo.paymentHistory === "poor"
+                        ? "ต้องปรับปรุง"
+                        : "ไม่ทราบ"}
               </Badge>
             </div>
           </div>
@@ -532,7 +602,9 @@ const Profile = () => {
       {/* Alternative Data */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-ghb-dark thai-text">ข้อมูลทางเลือก</CardTitle>
+          <CardTitle className="text-ghb-dark thai-text">
+            ข้อมูลทางเลือก
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -545,14 +617,18 @@ const Profile = () => {
                   key={item.key}
                   className={cn(
                     "flex items-center justify-between p-3 rounded-lg",
-                    isActive ? "bg-green-50 border border-green-200" : "bg-gray-50"
+                    isActive
+                      ? "bg-green-50 border border-green-200"
+                      : "bg-gray-50",
                   )}
                 >
                   <div className="flex items-center">
-                    <Icon className={cn(
-                      "w-5 h-5 mr-3",
-                      isActive ? "text-green-500" : "text-gray-400"
-                    )} />
+                    <Icon
+                      className={cn(
+                        "w-5 h-5 mr-3",
+                        isActive ? "text-green-500" : "text-gray-400",
+                      )}
+                    />
                     <span className="text-sm text-ghb-dark thai-text">
                       {item.label}
                     </span>
@@ -578,13 +654,13 @@ const Profile = () => {
 
           <div className="text-center">
             <div className="text-2xl font-bold text-ghb-primary mb-1">
-              +{alternativeDataItems
-                .filter(item => customerData.alternativeData[item.key])
-                .reduce((sum, item) => sum + item.points, 0)} คะแนน
+              +
+              {alternativeDataItems
+                .filter((item) => customerData.alternativeData[item.key])
+                .reduce((sum, item) => sum + item.points, 0)}{" "}
+              คะแนน
             </div>
-            <p className="text-sm text-ghb-gray thai-text">
-              จากข้อมูลทางเลือก
-            </p>
+            <p className="text-sm text-ghb-gray thai-text">จากข้อมูลทางเลือก</p>
           </div>
         </CardContent>
       </Card>
@@ -592,16 +668,20 @@ const Profile = () => {
       {/* Credit Improvement Tips */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-ghb-dark thai-text">วิธีปรับปรุงคะแนนเครดิต</CardTitle>
+          <CardTitle className="text-ghb-dark thai-text">
+            วิธีปรับปรุงคะแนนเครดิต
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
             <div className="flex items-start space-x-3 p-3 bg-blue-50 rounded-lg">
               <CheckCircle2 className="w-5 h-5 text-blue-500 mt-0.5" />
               <div>
-                <h4 className="font-semibold text-blue-900 thai-text">ชำระบิลตรงเวลา</h4>
+                <h4 className="font-semibold text-blue-900 thai-text">
+                  ชำระบิลตรงเวลา
+                </h4>
                 <p className="text-sm text-blue-700 thai-text">
-                  ช��ระค่าสาธารณูปโภคและบิลต่างๆ ทุกเดือน
+                  ชำระค่าสาธารณูปโภคและบิลต่างๆ ทุกเดือน
                 </p>
               </div>
             </div>
@@ -609,7 +689,9 @@ const Profile = () => {
             <div className="flex items-start space-x-3 p-3 bg-green-50 rounded-lg">
               <PiggyBank className="w-5 h-5 text-green-500 mt-0.5" />
               <div>
-                <h4 className="font-semibold text-green-900 thai-text">สร้างนิสัยการออม</h4>
+                <h4 className="font-semibold text-green-900 thai-text">
+                  สร้างนิสัยการออม
+                </h4>
                 <p className="text-sm text-green-700 thai-text">
                   ออมเงินสม่ำเสมออย่างน้อย 10% ของรายได้
                 </p>
@@ -619,7 +701,9 @@ const Profile = () => {
             <div className="flex items-start space-x-3 p-3 bg-purple-50 rounded-lg">
               <CreditCard className="w-5 h-5 text-purple-500 mt-0.5" />
               <div>
-                <h4 className="font-semibold text-purple-900 thai-text">ใช้บัตรเครดิตอย่างระมัดระวัง</h4>
+                <h4 className="font-semibold text-purple-900 thai-text">
+                  ใช้บัตรเครดิตอย่างระมัดระวัง
+                </h4>
                 <p className="text-sm text-purple-700 thai-text">
                   ใช้ไม่เกิน 30% ของวงเงิน และชำระเต็มจำนวนทุกเดือน
                 </p>
@@ -643,7 +727,9 @@ const Profile = () => {
             <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg border border-green-200">
               <div className="flex items-center">
                 <CheckCircle2 className="w-5 h-5 text-green-500 mr-3" />
-                <span className="text-sm text-ghb-dark thai-text">บัตรประชาชน</span>
+                <span className="text-sm text-ghb-dark thai-text">
+                  บัตรประชาชน
+                </span>
               </div>
               <Badge className="bg-green-100 text-green-700">ยืนยันแล้ว</Badge>
             </div>
@@ -653,21 +739,27 @@ const Profile = () => {
                 <CheckCircle2 className="w-5 h-5 text-green-500 mr-3" />
                 <span className="text-sm text-ghb-dark thai-text">ภ.พ.30</span>
               </div>
-              <Badge className="bg-green-100 text-green-700">อัปโหล���แล้ว</Badge>
+              <Badge className="bg-green-100 text-green-700">อัปโหลดแล้ว</Badge>
             </div>
 
             <div className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg border border-yellow-200">
               <div className="flex items-center">
                 <AlertCircle className="w-5 h-5 text-yellow-500 mr-3" />
-                <span className="text-sm text-ghb-dark thai-text">Bank Statement</span>
+                <span className="text-sm text-ghb-dark thai-text">
+                  Bank Statement
+                </span>
               </div>
-              <Badge className="bg-yellow-100 text-yellow-700">รอการตรวจสอบ</Badge>
+              <Badge className="bg-yellow-100 text-yellow-700">
+                รอการตรวจสอบ
+              </Badge>
             </div>
 
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center">
                 <FileText className="w-5 h-5 text-gray-400 mr-3" />
-                <span className="text-sm text-ghb-dark thai-text">ใบเสร็จค่าสาธารณูปโภค</span>
+                <span className="text-sm text-ghb-dark thai-text">
+                  ใบเสร็จค่าสาธารณูปโภค
+                </span>
               </div>
               <Badge variant="outline">ยังไม่ได้อัปโหลด</Badge>
             </div>
@@ -678,7 +770,9 @@ const Profile = () => {
       {/* Upload Section */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-ghb-dark thai-text">อัปโหลดเอกสารเพิ่มเติม</CardTitle>
+          <CardTitle className="text-ghb-dark thai-text">
+            อัปโหลดเอกสารเพิ่มเติม
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -703,16 +797,20 @@ const Profile = () => {
       {/* Document Guidelines */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-ghb-dark thai-text">คำแนะนำการเตรียมเอกสาร</CardTitle>
+          <CardTitle className="text-ghb-dark thai-text">
+            คำแนะนำการเตรียมเอกสาร
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
             <div className="flex items-start space-x-3">
               <Info className="w-5 h-5 text-blue-500 mt-0.5" />
               <div>
-                <h4 className="font-semibold text-ghb-dark thai-text">เอกสารควรชัดเจน</h4>
+                <h4 className="font-semibold text-ghb-dark thai-text">
+                  เอกสารควรชัดเจน
+                </h4>
                 <p className="text-sm text-ghb-gray thai-text">
-                  ถ่ายภาพหรือ��แกนให้เห็นข้อมูลทุกส่วน ไม่เบลอ
+                  ถ่ายภาพหรือสแกนให้เห็นข้อมูลทุกส่วน ไม่เบลอ
                 </p>
               </div>
             </div>
@@ -720,7 +818,9 @@ const Profile = () => {
             <div className="flex items-start space-x-3">
               <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5" />
               <div>
-                <h4 className="font-semibold text-ghb-dark thai-text">เอกสารต้องยังไม่หมดอายุ</h4>
+                <h4 className="font-semibold text-ghb-dark thai-text">
+                  เอกสารต้องยังไม่หมดอายุ
+                </h4>
                 <p className="text-sm text-ghb-gray thai-text">
                   ตรวจสอบวันหมดอายุของบัตรประชาชนและเอกสารอื่นๆ
                 </p>
@@ -730,7 +830,9 @@ const Profile = () => {
             <div className="flex items-start space-x-3">
               <Shield className="w-5 h-5 text-purple-500 mt-0.5" />
               <div>
-                <h4 className="font-semibold text-ghb-dark thai-text">ข้อมูลปลอดภัย</h4>
+                <h4 className="font-semibold text-ghb-dark thai-text">
+                  ข้อมูลปลอดภัย
+                </h4>
                 <p className="text-sm text-ghb-gray thai-text">
                   เอกสารจะถูกเข้ารหัสและจัดเก็บอย่างปลอดภัย
                 </p>
@@ -743,10 +845,10 @@ const Profile = () => {
   );
 
   const tabs = [
-    { key: 'overview' as const, label: 'ภาพรวม', icon: User },
-    { key: 'financial' as const, label: 'การเงิน', icon: DollarSign },
-    { key: 'credit' as const, label: 'เครดิต', icon: Star },
-    { key: 'documents' as const, label: 'เอกสาร', icon: FileText }
+    { key: "overview" as const, label: "ภาพรวม", icon: User },
+    { key: "financial" as const, label: "การเงิน", icon: DollarSign },
+    { key: "credit" as const, label: "เครดิต", icon: Star },
+    { key: "documents" as const, label: "เอกสาร", icon: FileText },
   ];
 
   return (
@@ -785,7 +887,7 @@ const Profile = () => {
                     "flex items-center space-x-2 px-4 py-3 rounded-lg transition-all duration-200 min-w-fit thai-text",
                     activeTab === tab.key
                       ? "bg-ghb-primary text-white shadow-md"
-                      : "text-ghb-gray hover:bg-gray-50"
+                      : "text-ghb-gray hover:bg-gray-50",
                   )}
                 >
                   <Icon className="w-4 h-4" />
@@ -797,10 +899,10 @@ const Profile = () => {
 
           {/* Tab Content */}
           <div className="max-w-2xl mx-auto">
-            {activeTab === 'overview' && renderOverviewTab()}
-            {activeTab === 'financial' && renderFinancialTab()}
-            {activeTab === 'credit' && renderCreditTab()}
-            {activeTab === 'documents' && renderDocumentsTab()}
+            {activeTab === "overview" && renderOverviewTab()}
+            {activeTab === "financial" && renderFinancialTab()}
+            {activeTab === "credit" && renderCreditTab()}
+            {activeTab === "documents" && renderDocumentsTab()}
           </div>
         </div>
       </div>
